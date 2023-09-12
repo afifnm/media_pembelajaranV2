@@ -20,6 +20,7 @@
     
     <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
+      <?php if($this->session->userdata('menu')=="mediainfo") { ?>
         <li class="header">NAVIGASI</li>
         <li class="<?php echo activate_menu('home'); ?>">
           <a href="<?php echo site_url('admin/home');?>">
@@ -77,7 +78,14 @@
                 <span>Kritik dan Saran</span>
             </a>
         </li>
+        <?php } else { ?>
         <li class="header">SISTEM INFORMASI TUGAS AKHIR</li>
+        <li class="<?php echo activate_menu('home'); ?>">
+          <a href="<?php echo site_url('admin/home');?>">
+                <i class="fa fa-dashboard"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
         <li class="<?php echo activate_menu('dosen'); ?>">
           <a href="<?php echo site_url('admin/dosen');?>">
                 <i class="fa fa-user"></i>
@@ -103,6 +111,7 @@
                 <span>Pendaftaran Ujian</span>
             </a>
         </li>
+        <?php } ?>
       </ul>
     <!-- /.sidebar-menu -->
   </section>

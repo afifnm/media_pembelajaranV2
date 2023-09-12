@@ -63,6 +63,7 @@ class Auth extends MY_Controller
             //membuat session dengan nama userData yang artinya nanti data ini bisa di ambil sesuai dengan data yang login
             $userdata = array(
               'is_login'    => true,
+              'menu'        => $this->input->post('menu'),
               'id'          => $query->id,
               'password'    => $query->password,
               'username'    => $query->username,

@@ -1,9 +1,5 @@
-<?php
-
-defined('BASEPATH') or exit('No direct script access allowed');
-
-class Judul extends MY_Controller
-{
+<?php defined('BASEPATH') or exit('No direct script access allowed');
+class Judul extends MY_Controller{
     public function __construct(){
         parent::__construct();
         $this->check_login();
@@ -18,17 +14,16 @@ class Judul extends MY_Controller
  
     public function index(){
         $site = $this->Konfigurasi_model->listing();
+        $this->db->select('*')->from('judul');
+        $this->db->order_by("nim","ASC");
+        $data2 = $this->db->get()->result_array();
         $data = array(
             'title'                 => 'Pendataan Judul Tugas Akhir | '.$site['nama_website'],
             'favicon'               => $site['favicon'],
             'site'                  => $site,
+            'data2'                 => $data2
         );
-         $this->db->select('*');
-         $this->db->from('judul');
-         $this->db->order_by("nim","ASC");
-         $data2 = $this->db->get()->result_array();
-         $data2 = array('data2' => $data2);
-        $this->template->load('layout/template', 'admin/sita/judul', array_merge($data, $data2));
+        $this->template->load('layout/template', 'admin/sita/judul_tahun', array_merge($data));
     }
 
     public function update(){
