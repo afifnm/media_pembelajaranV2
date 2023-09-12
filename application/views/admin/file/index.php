@@ -49,7 +49,8 @@
         <td><?php echo $filesize.' KB' ?></td>
         <td align="center">
         <a href="<?php echo site_url('assets/upload/file/'.$file);?>" class="btn btn-info btn-sm" target="_blank"><i class="fa fa-download"></i></a>
-        <a href="<?php echo site_url('admin/file/delete/'.$file);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+        <a onClick="return confirm('Apakah anda yakin menghapus data ini?')"
+         href="<?php echo site_url('admin/file/delete/'.$file);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
         </td>
         </tr>
         <?php $no++; } }?>

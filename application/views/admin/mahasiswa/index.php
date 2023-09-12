@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div class="col-xs-6">
+<div class="col-xs-12">
   <div class="box box-solid">
     <div class="box-header">
       <h3 class="box-title"><i class="fa fa-user"></i> Data Mahasiswa PPKn</h3>
@@ -37,7 +37,8 @@
         <td><?php echo $user['nama']; ?></td>
         <td align="center">
           <a href="<?php echo site_url('admin/mahasiswa/edit/'.$user['id']);?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-          <a href="<?php echo site_url('admin/mahasiswa/delete/'.$user['id']);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+          <a onClick="return confirm('Apakah anda yakin menghapus data ini?')"
+           href="<?php echo site_url('admin/mahasiswa/delete/'.$user['id']);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
         </td>
         </tr>
         <?php $no++; } ?>

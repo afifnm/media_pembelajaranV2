@@ -41,7 +41,8 @@
         <td><?php echo date('d F Y', strtotime($user['created_at'])).' - '.date('H:i', strtotime($user['created_at'])) ?></td>
         <td><?php echo $user['isi']; ?></td>
         <td align="center">
-          <a href="<?php echo site_url('admin/kritikdansaran/delete/'.$user['id']);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+          <a onClick="return confirm('Apakah anda yakin menghapus data ini?')" 
+          href="<?php echo site_url('admin/kritikdansaran/delete/'.$user['id']);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
         </td>
         </tr>
         <?php $no++; } ?>

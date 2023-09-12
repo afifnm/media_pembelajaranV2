@@ -16,6 +16,7 @@ class Home extends MY_Controller
     }
 
     public function index(){
+        if(isset($_SESSION['alert'])){ unset($_SESSION['alert']);}
         $site = $this->Konfigurasi_model->listing();
         $data = array(
             'title'                 => 'Dashboard | '.$site['nama_website'],

@@ -38,7 +38,8 @@
         <td><img src="<?php echo base_url('assets/upload/sarana/'.$user['nama']); ?>" class="margin" style="width: 200px; height: 200px;"></td>
         <td align="center">
         <a href="<?php echo base_url('assets/upload/sarana/'.$user['nama']); ?>" class="btn btn-info btn-md" target="_blank"><i class="fa fa-download"></i></a>
-        <a href="<?php echo site_url('admin/sarana/delete/'.$user['nama']);?>" class="btn btn-danger btn-md"><i class="fa fa-trash"></i></a>
+        <a onClick="return confirm('Apakah anda yakin menghapus data ini?')"
+         href="<?php echo site_url('admin/sarana/delete/'.$user['nama']);?>" class="btn btn-danger btn-md"><i class="fa fa-trash"></i></a>
         </td>
         </tr>
         <?php $no++; } ?>

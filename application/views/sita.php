@@ -13,16 +13,10 @@
     <section id="inner-headline">
       <div class="container">
         <div class="row">
-          <div class="span8">
+          <div class="span12">
             <div class="inner-heading">
-              <h2>Sistem Informasi Tugas Akhir (SITA)</h2>
+              <center><h2>Sistem Informasi Tugas Akhir (SITA)</h2></center>
             </div>
-          </div>
-          <div class="span4">
-            <ul class="breadcrumb">
-              <li><a href="../">Beranda</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Sistem Informasi Tugas Akhir (SITA)</a> </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -56,17 +50,6 @@
               <div class="heading">
                 <h4>PENDAFTARAN JUDUL</h4>
               </div>
-<!--               <div class="">
-                <ul>
-                  <li>NIM</li>
-                  <li>Nama</li>
-                  <li>Email</li>
-                  <li>Nomor HP</li>
-                  <li>Dosen Pembimbing 1 & 2</li>
-                  <li>Judul Skripsi</li>
-                  <li>Link Form Judul yg Sudah Disahkan Pembimbing 1,2 & Kaprodi</li>
-                </ol>
-              </div> -->
               <div class="action">
                 <a href="<?php echo site_url('sita/judul');?>" class="btn btn-inverse">&nbsp;&nbsp;&nbsp;Daftar&nbsp;&nbsp;&nbsp;</a>
               </div>
@@ -76,19 +59,7 @@
             <div class="pricing-box-plain">
               <div class="heading">
                 <h4>PENDAFTARAN UJIAN</h4>
-                
               </div>
-<!--          div class="">
-                <ul>
-                  <li>Scan Rekap SPP</li>
-                  <li>Scan KRS Terakhir</li>
-                  <li>Scan Transkip Nilai</li>
-                  <li>Scan Pengesahan Pembimbing 1 & 2</li>
-                  <li>Sertifikat Pemakalah Seminar Nasional & Naskah Proseding</li>
-                  <li>Hasil Uji Turnitin</li>
-                  <li>Link Berkas-Berkas Ujian</li>
-                </ul>
-              </div> -->
               <div class="action">
                 <a href="<?php echo site_url('sita/ujian');?>" class="btn btn-inverse">&nbsp;&nbsp;&nbsp;Daftar&nbsp;&nbsp;&nbsp;</a>
               </div>
@@ -107,9 +78,9 @@
 
       <div class="row">
           <div class="span6">
-            <div class="pricing-box-plain">
+            <div class="pricing-box-plain" style="padding-bottom: 10px;">
             <div class="heading">
-                <span>Rekapitulasi Pendaftaran Judul dan Ujian Skripsi Program Studi PPKn FKIP UNS</span>
+                <span>Rekapitulasi Pendaftaran Judul dan Ujian Skripsi Program Studi S1 PPKn FKIP UNS</span>
               </div>
                 <table class="table table-striped">
                   <thead>
@@ -118,51 +89,39 @@
                       <th>Jumlah</th>
                       <th>Mendaftar Judul</th>
                       <th>Mendaftar Ujian </th>
-                      <th>Sudah Ujian</th>
-                                 
+                      <th>Sudah Ujian</th>             
                     </tr>
                   </thead>  
                 <tbody>
-
+                <?php for ($i=0; $i <= 4; $i++){ ?>
                 <tr>
-                  <td><?php echo date("Y")-6;  ?></td>
-                  <td><?php echo $this->CRUD_model->jumlahangkatan(6);  ?></td>
-                  <td><?php echo $this->CRUD_model->daftarjudul(6); ?></td>
-                  <td><?php echo $this->CRUD_model->ujian(4,6)+$this->CRUD_model->ujian(5,6); ?></td>
-                  <td><?php echo $this->CRUD_model->ujian(6,6);?></td>
+                  <td>
+                    <span class="label label-info">
+                      <?php echo date("Y")-$i;  ?>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="label label-info">
+                    <?php echo $this->CRUD_model->jumlahangkatan(6-$i);  ?>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="label label-primary">
+                      <?php echo $this->CRUD_model->daftarjudul(6-$i); ?>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="label label-warning">
+                      <?php echo $this->CRUD_model->ujian(4,6-$i)+$this->CRUD_model->ujian(5,6-$i); ?>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="label label-success">
+                      <?php echo $this->CRUD_model->ujian(6,6-$i);?>
+                    </span>
+                  </td>
                 </tr>
-                <tr>
-                  <td><?php echo date("Y")-5;  ?></td>
-                  <td><?php echo $this->CRUD_model->jumlahangkatan(5);  ?></td>
-                  <td><?php echo $this->CRUD_model->daftarjudul(5); ?></td>
-                  <td><?php echo $this->CRUD_model->ujian(4,5)+$this->CRUD_model->ujian(5,5); ?></td>
-                  <td><?php echo $this->CRUD_model->ujian(6,5);?></td>
-               
-                </tr>
-                <tr>
-                  <td><?php echo date("Y")-4;  ?></td>
-                  <td><?php echo $this->CRUD_model->jumlahangkatan(4);  ?></td>
-                  <td><?php echo $this->CRUD_model->daftarjudul(4); ?></td>
-                  <td><?php echo $this->CRUD_model->ujian(4,4)+$this->CRUD_model->ujian(5,4); ?></td>
-                  <td><?php echo $this->CRUD_model->ujian(6,4);?></td>
-                 
-                </tr>
-                <tr>
-                  <td><?php echo date("Y")-3;  ?></td>
-                  <td><?php echo $this->CRUD_model->jumlahangkatan(3);  ?></td>
-                  <td><?php echo $this->CRUD_model->daftarjudul(3); ?></td>
-                  <td><?php echo $this->CRUD_model->ujian(4,3)+$this->CRUD_model->ujian(5,3); ?></td>
-                  <td><?php echo $this->CRUD_model->ujian(6,3);?></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-            
-                  <td></td>
-                 
-                </tr>
+                <?php } ?>
                 </tbody>
               </table>
             </div>

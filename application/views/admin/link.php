@@ -40,7 +40,8 @@
         <td><?php echo $user['created_at']; ?></td>
         <td align="center">
           <a href="<?php echo site_url('admin/link/edit/'.$user['id']);?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-          <a href="<?php echo site_url('admin/link/delete/'.$user['id']);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+          <a onClick="return confirm('Apakah anda yakin menghapus data ini?')"
+           href="<?php echo site_url('admin/link/delete/'.$user['id']);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
         </td>
         </tr>
         <?php $no++; } ?>

@@ -10,7 +10,7 @@ class Kritikdansaran extends MY_Controller
         $this->load->database();
         $this->load->helper(array('form', 'url'));
         $this->load->model('CRUD_model');
-        $this->load->library('pdf');
+        //$this->load->library('pdf');
         if ($this->session->userdata('level') != "Admin") {
             redirect('', 'refresh');
         }

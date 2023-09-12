@@ -41,7 +41,8 @@
         <td align="center">
           <a href="<?php echo site_url('home/info/'.$user['id']);?>" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></a>
           <a href="<?php echo site_url('admin/informasi/edit/'.$user['id']);?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-          <a href="<?php echo site_url('admin/informasi/delete/'.$user['foto']);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+          <a onClick="return confirm('Apakah anda yakin menghapus data ini?')"
+          href="<?php echo site_url('admin/informasi/delete/'.$user['foto']);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
         </td>
         </tr>
         <?php $no++; } ?>

@@ -68,7 +68,7 @@
           <a href="http://<?php echo $user['file1'];?>" class="btn btn-info btn-sm" target="_blank"><i class="fa fa-download"></i></a>
           <a href="<?php echo site_url('sita/skripsi/'.$user['id']);?>" class="btn btn-success btn-sm" target="_blank"><i class="fa fa-search-plus"></i></a>
           <a href="<?php echo site_url('admin/judul/edit/'.$user['id']);?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-          <a href="<?php echo site_url('admin/judul/delete/'.$user['id']);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+          <a onClick="return confirm('Apakah anda yakin menghapus data ini?')" href="<?php echo site_url('admin/judul/delete/'.$user['id']);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
         </td>
         </tr>
         <?php $no++; } ?>
