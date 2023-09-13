@@ -2,14 +2,15 @@
 <html>
 <head>
 	<title>
-	<?php echo $title ?>
+		<?php echo $title ?>
 	</title>
 	<link href='<?php echo base_url("assets/upload/images/fav.ico"); ?>' rel='shortcut icon' type='image/x-icon' />
 	<!-- meta -->
 	<?php require_once('_meta.php') ;?>
 	<!-- css -->
 	<?php require_once('_css.php') ;?>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 	<!-- jQuery 2.2.3 -->
 	<script src="<?php echo base_url('assets');?>/vendor/jquery/jquery.min.js"></script>
 </head>
@@ -20,9 +21,9 @@
 		<!-- sidebar -->
 		<?php require_once('_sidebar.php') ;?>
 		<!-- content -->
-		<div class="content-wrapper">
+		<div class="content-wrapper" style="min-height: 1000px;">
 			<!-- Main content -->
-			<section class="col-xs-12 ngepasin">
+			<section class="content">
 				<?php echo $contents ;?>
 			</section>
 		</div>

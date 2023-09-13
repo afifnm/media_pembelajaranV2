@@ -7,6 +7,7 @@ class Judul extends MY_Controller{
         $this->load->helper(array('form', 'url'));
         $this->load->helper('tgl_indo');
         $this->load->model('CRUD_model');
+        $this->load->model('Sita_model');
         if ($this->session->userdata('level') != "Admin") {
             redirect('', 'refresh');
         }
@@ -14,8 +15,8 @@ class Judul extends MY_Controller{
  
     public function index(){
         $site = $this->Konfigurasi_model->listing();
-        $this->db->select('*')->from('judul');
-        $this->db->order_by("nim","ASC");
+        $this->db->select('DISTINCT(SUBSTRING(nim,4,2)) as tahun')->from('judul');
+        $this->db->order_by('tahun', 'ASC');
         $data2 = $this->db->get()->result_array();
         $data = array(
             'title'                 => 'Pendataan Judul Tugas Akhir | '.$site['nama_website'],
@@ -24,6 +25,19 @@ class Judul extends MY_Controller{
             'data2'                 => $data2
         );
         $this->template->load('layout/template', 'admin/sita/judul_tahun', array_merge($data));
+    }
+    public function angkatan($id){
+        $site = $this->Konfigurasi_model->listing();
+        $this->db->like('nim','K64'.$id)->from('judul');
+        $this->db->order_by('nim', 'ASC');
+        $data2 = $this->db->get()->result_array();
+        $data = array(
+            'title'                 => 'Pendataan Judul Tugas Akhir | '.$site['nama_website'],
+            'favicon'               => $site['favicon'],
+            'site'                  => $site,
+            'data2'                 => $data2
+        );
+        $this->template->load('layout/template', 'admin/sita/judul', array_merge($data));
     }
 
     public function update(){

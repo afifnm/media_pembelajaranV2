@@ -65,7 +65,7 @@ class Auth extends MY_Controller
               'is_login'    => true,
               'menu'        => $this->input->post('menu'),
               'id'          => $query->id,
-              'password'    => $query->password,
+              'password'    =>  $query->password,
               'username'    => $query->username,
               'nama'        => $query->nama,
               'level'        => $query->level,

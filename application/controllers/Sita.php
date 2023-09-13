@@ -7,7 +7,7 @@ class SITA extends MY_Controller
         $this->load->database();
         $this->load->helper('url');
         $this->load->library('pagination');
-        //$this->load->library('Pdf');
+        $this->load->library('Pdf');
         $this->load->model('CRUD_model');
     }
 

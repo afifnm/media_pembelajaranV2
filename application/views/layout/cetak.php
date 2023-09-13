@@ -43,7 +43,8 @@ foreach ($data4 as $u) {
 
 	$pdf->Cell($x1 ,5,'Judul Penelitian',0,0);
 	$pdf->Cell(10 ,5,':',0,0);
-	$pdf->MultiCell(140,5,$u['judul'],0,1);
+	$judul = str_replace('”','"',$u['judul']);
+	$pdf->MultiCell(140,5,$judul,0,1);
 	$pdf->Cell($x1 ,5,'',0,0);
 	$pdf->Cell(10 ,5,':',0,0);
 	$pdf->MultiCell(140,5,$u['judul2'],0,1);
