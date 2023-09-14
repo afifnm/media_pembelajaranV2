@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Waktu pembuatan: 07 Sep 2023 pada 20.32
--- Versi server: 10.3.39-MariaDB-cll-lve
--- Versi PHP: 8.1.16
+-- Host: 127.0.0.1
+-- Generation Time: Sep 14, 2023 at 04:55 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,64 +24,66 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `agenda`
+-- Table structure for table `agenda`
 --
 
 CREATE TABLE `agenda` (
   `id` int(11) NOT NULL,
   `agenda` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dosen`
+-- Table structure for table `dosen`
 --
 
 CREATE TABLE `dosen` (
   `id_dosen` int(11) NOT NULL,
-  `nama` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `nama` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `wa` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dosen`
+-- Dumping data for table `dosen`
 --
 
-INSERT INTO `dosen` (`id_dosen`, `nama`) VALUES
-(1, 'Dr. Winarno., S.Pd., M.Si'),
-(2, 'Wijianto., S.Pd., M.Sc'),
-(3, 'Dr. Muh. Hendri. Nuryadi., S.Pd., M.Sc'),
-(4, 'Dr. Machmud Al-Rasyid., S.H., M.Si'),
-(5, 'Dr. Moh. Muchtarom. S.Ag., M.SI'),
-(6, 'Erna Yuliandari., S.H ., M.A'),
-(7, 'Dr. Rini Triastuti., S.H., M.Hum'),
-(8, 'Dr. Sri Haryati., M.Pd'),
-(9, 'Dr. Rusnaini., M.Si'),
-(11, 'Dr. Hassan Suryono., S.H., M.H., M.Pd'),
-(12, 'Dr. Dewi Gunawati., S.H., M.Hum'),
-(13, 'Prof. Dr. Triyanto., S.H., M.Hum'),
-(14, 'Dr. Triana Rejekiningsih., S.H., K.N., M.Pd'),
-(15, 'Dr. Rima Vien Permata H., S.H., M.H'),
-(16, 'Yudi Ariana., S.H., M.H'),
-(18, 'Raharjo, S.Pd.,M.Sc.'),
-(19, 'Anis Suryaningsih, S.Pd., M.Sc'),
-(20, 'Widya Noventari, S.Pd.,M.Sc');
+INSERT INTO `dosen` (`id_dosen`, `nama`, `email`, `wa`) VALUES
+(1, 'Dr. Winarno., S.Pd., M.Si', '', ''),
+(2, 'Wijianto., S.Pd., M.Sc', '', ''),
+(3, 'Dr. Muh. Hendri. Nuryadi., S.Pd., M.Sc', '', ''),
+(4, 'Dr. Machmud Al-Rasyid., S.H., M.Si', '', ''),
+(5, 'Dr. Moh. Muchtarom. S.Ag., M.SI', '', ''),
+(6, 'Erna Yuliandari., S.H ., M.A', '', ''),
+(7, 'Dr. Rini Triastuti., S.H., M.Hum', '', ''),
+(8, 'Dr. Sri Haryati., M.Pd', '', ''),
+(9, 'Dr. Rusnaini., M.Si', '', ''),
+(11, 'Dr. Hassan Suryono., S.H., M.H., M.Pd', '', ''),
+(12, 'Dr. Dewi Gunawati., S.H., M.Hum', '', ''),
+(13, 'Prof. Dr. Triyanto., S.H., M.Hum', '', ''),
+(14, 'Dr. Triana Rejekiningsih., S.H., K.N., M.Pd', '', ''),
+(15, 'Dr. Rima Vien Permata H., S.H., M.H', '', ''),
+(16, 'Yudi Ariana., S.H., M.H', '', ''),
+(18, 'Raharjo, S.Pd.,M.Sc.', '', ''),
+(19, 'Anis Suryaningsih, S.Pd., M.Sc', '', ''),
+(20, 'Widya Noventari, S.Pd.,M.Sc', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `file`
+-- Table structure for table `file`
 --
 
 CREATE TABLE `file` (
   `id` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `file`
+-- Dumping data for table `file`
 --
 
 INSERT INTO `file` (`id`, `nama`, `created_at`) VALUES
@@ -91,7 +93,7 @@ INSERT INTO `file` (`id`, `nama`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `informasi`
+-- Table structure for table `informasi`
 --
 
 CREATE TABLE `informasi` (
@@ -102,10 +104,10 @@ CREATE TABLE `informasi` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `foto` varchar(50) NOT NULL,
   `id_kategori` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `informasi`
+-- Dumping data for table `informasi`
 --
 
 INSERT INTO `informasi` (`id`, `judul`, `isi`, `tanggal`, `updated_at`, `foto`, `id_kategori`) VALUES
@@ -218,7 +220,7 @@ INSERT INTO `informasi` (`id`, `judul`, `isi`, `tanggal`, `updated_at`, `foto`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `judul`
+-- Table structure for table `judul`
 --
 
 CREATE TABLE `judul` (
@@ -248,10 +250,10 @@ CREATE TABLE `judul` (
   `jam2` time NOT NULL,
   `ruang` varchar(100) NOT NULL,
   `catatan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `judul`
+-- Dumping data for table `judul`
 --
 
 INSERT INTO `judul` (`id`, `no_ujian`, `nama`, `nim`, `password`, `no_hp`, `email`, `dosen1`, `dosen2`, `tanggal_judul`, `tanggal_daftar`, `jenis_penelitian`, `judul`, `judul2`, `file1`, `file2`, `tahap`, `penguji1`, `penguji2`, `penguji3`, `penguji4`, `tanggal_ujian`, `jam1`, `jam2`, `ruang`, `catatan`) VALUES
@@ -562,7 +564,7 @@ INSERT INTO `judul` (`id`, `no_ujian`, `nama`, `nim`, `password`, `no_hp`, `emai
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -572,10 +574,10 @@ CREATE TABLE `kategori` (
   `id_main` int(11) NOT NULL,
   `main` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `kategori`, `urutan`, `id_main`, `main`, `created_at`) VALUES
@@ -611,7 +613,7 @@ INSERT INTO `kategori` (`id_kategori`, `kategori`, `urutan`, `id_main`, `main`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `konfigurasi`
+-- Table structure for table `konfigurasi`
 --
 
 CREATE TABLE `konfigurasi` (
@@ -624,10 +626,10 @@ CREATE TABLE `konfigurasi` (
   `welcome` varchar(200) NOT NULL,
   `tanggal_awal` date NOT NULL,
   `tanggal_akhir` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `konfigurasi`
+-- Dumping data for table `konfigurasi`
 --
 
 INSERT INTO `konfigurasi` (`id`, `nama_website`, `favicon`, `logo`, `judul_profil`, `deskripsi`, `welcome`, `tanggal_awal`, `tanggal_akhir`) VALUES
@@ -636,7 +638,7 @@ INSERT INTO `konfigurasi` (`id`, `nama_website`, `favicon`, `logo`, `judul_profi
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kritikdansaran`
+-- Table structure for table `kritikdansaran`
 --
 
 CREATE TABLE `kritikdansaran` (
@@ -646,10 +648,10 @@ CREATE TABLE `kritikdansaran` (
   `no_hp` varchar(20) NOT NULL,
   `isi` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kritikdansaran`
+-- Dumping data for table `kritikdansaran`
 --
 
 INSERT INTO `kritikdansaran` (`id`, `nama`, `email`, `no_hp`, `isi`, `created_at`) VALUES
@@ -658,7 +660,7 @@ INSERT INTO `kritikdansaran` (`id`, `nama`, `email`, `no_hp`, `isi`, `created_at
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `link`
+-- Table structure for table `link`
 --
 
 CREATE TABLE `link` (
@@ -667,10 +669,10 @@ CREATE TABLE `link` (
   `link` varchar(50) NOT NULL,
   `lokasi` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `link`
+-- Dumping data for table `link`
 --
 
 INSERT INTO `link` (`id`, `judul`, `link`, `lokasi`, `created_at`) VALUES
@@ -683,17 +685,17 @@ INSERT INTO `link` (`id`, `judul`, `link`, `lokasi`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mahasiswa`
+-- Table structure for table `mahasiswa`
 --
 
 CREATE TABLE `mahasiswa` (
   `id` int(11) NOT NULL,
   `nim` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mahasiswa`
+-- Dumping data for table `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`id`, `nim`, `nama`) VALUES
@@ -1260,7 +1262,7 @@ INSERT INTO `mahasiswa` (`id`, `nim`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `main_sub`
+-- Table structure for table `main_sub`
 --
 
 CREATE TABLE `main_sub` (
@@ -1268,10 +1270,10 @@ CREATE TABLE `main_sub` (
   `main_sub` varchar(30) NOT NULL,
   `urutan` int(11) NOT NULL,
   `jenis` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `main_sub`
+-- Dumping data for table `main_sub`
 --
 
 INSERT INTO `main_sub` (`id_main`, `main_sub`, `urutan`, `jenis`) VALUES
@@ -1285,7 +1287,7 @@ INSERT INTO `main_sub` (`id_main`, `main_sub`, `urutan`, `jenis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sarana`
+-- Table structure for table `sarana`
 --
 
 CREATE TABLE `sarana` (
@@ -1293,12 +1295,12 @@ CREATE TABLE `sarana` (
   `judul` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -1319,10 +1321,10 @@ CREATE TABLE `user` (
   `fb` varchar(50) NOT NULL,
   `wa` varchar(50) NOT NULL,
   `tw` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `nama`, `level`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `foto`, `active`, `last_login`, `ig`, `youtube`, `fb`, `wa`, `tw`) VALUES
@@ -1333,161 +1335,161 @@ INSERT INTO `user` (`id`, `username`, `password`, `nama`, `level`, `tempat_lahir
 --
 
 --
--- Indeks untuk tabel `agenda`
+-- Indexes for table `agenda`
 --
 ALTER TABLE `agenda`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `dosen`
+-- Indexes for table `dosen`
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`id_dosen`);
 
 --
--- Indeks untuk tabel `file`
+-- Indexes for table `file`
 --
 ALTER TABLE `file`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `informasi`
+-- Indexes for table `informasi`
 --
 ALTER TABLE `informasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `judul`
+-- Indexes for table `judul`
 --
 ALTER TABLE `judul`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `konfigurasi`
+-- Indexes for table `konfigurasi`
 --
 ALTER TABLE `konfigurasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `kritikdansaran`
+-- Indexes for table `kritikdansaran`
 --
 ALTER TABLE `kritikdansaran`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `link`
+-- Indexes for table `link`
 --
 ALTER TABLE `link`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `mahasiswa`
+-- Indexes for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `main_sub`
+-- Indexes for table `main_sub`
 --
 ALTER TABLE `main_sub`
   ADD PRIMARY KEY (`id_main`);
 
 --
--- Indeks untuk tabel `sarana`
+-- Indexes for table `sarana`
 --
 ALTER TABLE `sarana`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `agenda`
+-- AUTO_INCREMENT for table `agenda`
 --
 ALTER TABLE `agenda`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `dosen`
+-- AUTO_INCREMENT for table `dosen`
 --
 ALTER TABLE `dosen`
-  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT untuk tabel `file`
+-- AUTO_INCREMENT for table `file`
 --
 ALTER TABLE `file`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `informasi`
+-- AUTO_INCREMENT for table `informasi`
 --
 ALTER TABLE `informasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=208;
 
 --
--- AUTO_INCREMENT untuk tabel `judul`
+-- AUTO_INCREMENT for table `judul`
 --
 ALTER TABLE `judul`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=407;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- AUTO_INCREMENT untuk tabel `konfigurasi`
+-- AUTO_INCREMENT for table `konfigurasi`
 --
 ALTER TABLE `konfigurasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `kritikdansaran`
+-- AUTO_INCREMENT for table `kritikdansaran`
 --
 ALTER TABLE `kritikdansaran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `link`
+-- AUTO_INCREMENT for table `link`
 --
 ALTER TABLE `link`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `mahasiswa`
+-- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=580;
 
 --
--- AUTO_INCREMENT untuk tabel `main_sub`
+-- AUTO_INCREMENT for table `main_sub`
 --
 ALTER TABLE `main_sub`
   MODIFY `id_main` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `sarana`
+-- AUTO_INCREMENT for table `sarana`
 --
 ALTER TABLE `sarana`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
