@@ -158,14 +158,14 @@
 							</table>
 						</div>
 					</div>
-        <!-- divider -->
-				<div class="row">
-					<div class="span12">
+					<!-- divider -->
+					<div class="row">
+						<div class="span12">
 
+						</div>
 					</div>
-				</div>
-				<!-- end divider -->
-          <div class="span6">
+					<!-- end divider -->
+					<div class="span6">
 						<div class="pricing-box-plain">
 							<div class="heading">
 								<span> Ketua Penguji </span>
@@ -223,7 +223,7 @@
 							</table>
 						</div>
 					</div>
-          <div class="span6">
+					<div class="span6">
 						<div class="pricing-box-plain">
 							<div class="heading">
 								<span> Sekretaris Penguji </span>

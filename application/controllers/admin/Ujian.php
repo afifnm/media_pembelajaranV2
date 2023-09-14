@@ -201,5 +201,26 @@ class Ujian extends MY_Controller
         $data2['data2'] = $this->CRUD_model->edit_data($where,'judul')->result();
         $this->template->load('layout/template', 'admin/sita/berkas', array_merge($data, $data2));
     }
+    public function cek(){
+        $email = $this->input->post('email');
+        //konfigurasi email
+        $config = Array(  
+          'protocol' => 'smtp',  
+          'smtp_host' => 'mail.mediainformasipkn.id',  
+          'smtp_port' => 587,  
+          'smtp_user' => 'admin@mediainformasipkn.id',   
+          'smtp_pass' => 'mediapkn2019',   
+          'mailtype' => 'html',   
+          'charset' => 'iso-8859-1'  
+         );  
+         $this->load->library('email', $config);  
+         $this->email->set_newline("\r\n"); 
+        $link = site_url("sita/skripsi/".$this->input->post('id'));
+        $this->email->from('admin@mediainformasipkn.id', 'Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+        $this->email->to($email);
+        $this->email->subject('Pemberitahuan Verifikasi Ujian Skripsi | Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+        $this->email->message('Pendaftaran ujian tugas akhir (skripsi) anda telah diverifikasi. Cek website untuk mengetahui  jadwal ujian dan tim penguji anda. Klik tautan berikut: <a href="'.$link.'" target="_blank"> '.$link.' </a> ');
+        $this->email->send();     
+    }
 
 }
