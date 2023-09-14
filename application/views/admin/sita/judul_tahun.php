@@ -1,7 +1,3 @@
-<ol class="breadcrumb">
-	<li><a href="<?php echo site_url('admin/home');?>"><i class="fa fa-home"></i> Home</a></li>
-	<li class="active">Data Judul Tugas Akhir</li>
-</ol>
 <div id="myalert">
 	<?php echo $this->session->flashdata('alert', true)?>
 </div>
@@ -20,16 +16,16 @@
   $tahun = "20".$row['tahun'];
   ?>
 <a href="<?php echo site_url('admin/judul/angkatan/'.$row['tahun']);?>">
-<div class="col-md-3 col-sm-6 col-xs-12">
+<div class="col-md-4 col-sm-6 col-xs-12">
 	<div class="info-box">
 		<span class="info-box-icon <?= $warna; ?>"><h2><?= $tahun; ?></h2></span>
 		<div class="info-box-content">
 			<span class="info-box-text"><?= $this->Sita_model->jumlahangkatan($row['tahun']); ?> Mahasiswa</span>
 			<span class="label label-primary">
-        <?= $this->Sita_model->daftarjudul($row['tahun']); ?> mendaftar judul
+        <?= $this->Sita_model->daftarjudul($row['tahun']); ?> daftar judul
       </span> &nbsp;
       <span class="label label-warning">
-      <?= $this->Sita_model->ujian(4,$row['tahun'])+$this->Sita_model->ujian(5,$row['tahun']); ?> mendaftar ujian
+      <?= $this->Sita_model->ujian(4,$row['tahun'])+$this->Sita_model->ujian(5,$row['tahun']); ?> daftar ujian
       </span> <br>
       <span class="label label-success">
         <?= $this->Sita_model->ujian(6,$row['tahun']); ?> sudah ujian

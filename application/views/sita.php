@@ -102,7 +102,7 @@
                   </td>
                   <td>
                     <span class="label label-info">
-                    <?php echo $this->CRUD_model->jumlahangkatan(6-$i);  ?>
+                    <?php echo $jumlah=$this->CRUD_model->jumlahangkatan(6-$i);  ?>
                     </span>
                   </td>
                   <td>
@@ -116,8 +116,17 @@
                     </span>
                   </td>
                   <td>
+                  <span class="label label-success">
+                      <?php echo $sudah=$this->CRUD_model->ujian(6,6-$i);
+                      if(($jumlah==0) OR ($sudah==0)){
+                        $persen = 0;
+                      } else {
+                        $persen = $sudah/$jumlah*100;
+                      }
+                      ?>
+                    </span>
                     <span class="label label-success">
-                      <?php echo $this->CRUD_model->ujian(6,6-$i);?>
+                      <?php echo number_format($persen,0);?>%
                     </span>
                   </td>
                 </tr>

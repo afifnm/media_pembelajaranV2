@@ -72,24 +72,29 @@ class SITA extends MY_Controller
           'site'                  => $site,
           'id_dosen'              => $id_dosen
       );
-       $this->db->select('*');
-       $this->db->from('dosen');
-       $this->db->where('id_dosen',$id_dosen); 
+       $this->db->select('*')->from('dosen')->where('id_dosen',$id_dosen); 
        $data4 = $this->db->get()->result_array();
-       $data4 = array('data4' => $data4);
-
-       $this->db->select('*');
-       $this->db->from('judul');
-       $this->db->or_where('dosen1',$id_dosen);
+ 
+       $this->db->select('*')->from('judul')->where('dosen1',$id_dosen);
        $data2 = $this->db->get()->result_array();
-       $data2 = array('data2' => $data2);
 
-       $this->db->select('*');
-       $this->db->from('judul');
-       $this->db->or_where('dosen2',$id_dosen); 
+       $this->db->select('*')->from('judul')->where('dosen2',$id_dosen); 
        $data3 = $this->db->get()->result_array();
-       $data3 = array('data3' => $data3);  
-       $this->load->view('bimbingan',array_merge($data,$data2,$data3, $data4));
+
+       $this->db->select('*')->from('judul')->where('penguji1',$id_dosen); 
+       $ketua = $this->db->get()->result_array();
+
+       $this->db->select('*')->from('judul')->where('penguji2',$id_dosen); 
+       $sekre = $this->db->get()->result_array();
+
+       $data2 = array(
+        'data2' => $data2,
+        'data3' => $data3,
+        'data4' => $data4,
+        'ketua' => $ketua,
+        'sekre' => $sekre
+      );  
+       $this->load->view('bimbingan',array_merge($data,$data2));
     }
     public function cetakbimbingan($id,$id_dosen){
       $site = $this->Konfigurasi_model->listing();
@@ -106,21 +111,25 @@ class SITA extends MY_Controller
        $data4 = $this->db->get()->result_array();
        $data4 = array('data4' => $data4);
        if($id==1){
-          $this->db->select('*');
-          $this->db->from('judul');
-          $this->db->or_where('dosen1',$id_dosen);
+          $this->db->select('*')->from('judul');
+          $this->db->where('dosen1',$id_dosen);
           $data2 = $this->db->get()->result_array();
-          $data2 = array('data2' => $data2);
-       } else {
-         $this->db->select('*');
-         $this->db->from('judul');
-         $this->db->or_where('dosen2',$id_dosen); 
-         $data2 = $this->db->get()->result_array();
-         $data2 = array('data2' => $data2); 
+       } else if($id==2){
+        $this->db->select('*')->from('judul');
+        $this->db->where('dosen2',$id_dosen); 
+        $data2 = $this->db->get()->result_array();
+       } else if($id==3){ 
+        $this->db->select('*')->from('judul');
+        $this->db->where('penguji1',$id_dosen); 
+        $data2 = $this->db->get()->result_array();
+       } else if($id==4){ 
+        $this->db->select('*')->from('judul');
+        $this->db->where('penguji2',$id_dosen); 
+        $data2 = $this->db->get()->result_array();
        }
        
 
-        
+       $data2 = array('data2' => $data2); 
        $this->load->view('layout/cetak_bimbingan',array_merge($data,$data2,$data4));
     }
     public function printskripsi($id){

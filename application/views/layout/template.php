@@ -21,7 +21,7 @@
 		<!-- sidebar -->
 		<?php require_once('_sidebar.php') ;?>
 		<!-- content -->
-		<div class="content-wrapper" style="min-height: 1000px;">
+		<div class="content-wrapper" style="min-height: 1100px;">
 			<!-- Main content -->
 			<section class="content">
 				<?php echo $contents ;?>

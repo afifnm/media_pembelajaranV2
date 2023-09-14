@@ -26,14 +26,16 @@ class Dosen extends MY_Controller
          $this->db->from('dosen');
          $data3 = $this->db->get()->result_array();
          $data3 = array('data3' => $data3);
-        $this->template->load('layout/template', 'admin/dosen/index', array_merge($data, $data3));
+        $this->template->load('layout/template', 'admin/dosen', array_merge($data, $data3));
     }
     public function simpan(){
         $data = array(
             'nama' => $this->input->post('nama'),
+            'email' => $this->input->post('email'),
+            'wa' => $this->input->post('wa'),
          );  
         $this->CRUD_model->Insert('dosen', $data); 
-        $this->session->set_flashdata('kategori', '<p class="box-msg">
+        $this->session->set_flashdata('alert', '<p class="box-msg">
         <div class="info-box alert-success">
         <div class="info-box-icon">
         <i class="fa fa-check"></i>
@@ -60,21 +62,11 @@ class Dosen extends MY_Controller
         ');
         redirect('admin/dosen');
     }
-    public function edit($id){
-        $site = $this->Konfigurasi_model->listing();
-        $data = array(
-            'title'                 => 'Perbarui Data Dosen | '.$site['nama_website'],
-            'favicon'               => $site['favicon'],
-            'site'                  => $site
-        );
-        $where = array('id_dosen' => $id);
-        $data2['data2'] = $this->CRUD_model->edit_data($where,'dosen')->result();
-        $this->template->load('layout/template', 'admin/dosen/edit', array_merge($data, $data2));
-    }
-
     public function update(){
         $data = array(
-            'nama' => $this->input->post('nama')
+            'nama' => $this->input->post('nama'),
+            'email' => $this->input->post('email'),
+            'wa' => $this->input->post('wa'),
          );  
         $where = array(
             'id_dosen' => $this->input->post('id'),

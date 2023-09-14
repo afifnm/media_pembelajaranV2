@@ -1,7 +1,3 @@
-  <ol class="breadcrumb">
-    <li><a href="<?php echo site_url('admin/home');?>"><i class="fa fa-home"></i> Home</a></li>
-    <li class="active">Data Mahasiswa PPKn</li>
-  </ol>
 <div id="myalert">
   <?php echo $this->session->flashdata('alert', true)?>
 </div>
@@ -36,9 +32,9 @@
         <td><?php echo $user['nim']; ?></td>
         <td><?php echo $user['nama']; ?></td>
         <td align="center">
-          <a href="<?php echo site_url('admin/mahasiswa/edit/'.$user['id']);?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+          <a href="<?php echo site_url('admin/mahasiswa/edit/'.$user['id']);?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
           <a onClick="return confirm('Apakah anda yakin menghapus data ini?')"
-           href="<?php echo site_url('admin/mahasiswa/delete/'.$user['id']);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+           href="<?php echo site_url('admin/mahasiswa/delete/'.$user['id']);?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
         </td>
         </tr>
         <?php $no++; } ?>

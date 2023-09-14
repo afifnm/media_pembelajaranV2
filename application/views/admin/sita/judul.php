@@ -1,7 +1,3 @@
-  <ol class="breadcrumb">
-    <li><a href="<?php echo site_url('admin/home');?>"><i class="fa fa-home"></i> Home</a></li>
-    <li class="active">Data Judul Tugas Akhir</li>
-  </ol>
 <div id="myalert">
   <?php echo $this->session->flashdata('alert', true)?>
 </div>
@@ -62,10 +58,10 @@
             } ?>
         </td>
         <td align="center">
-          <a href="http://<?php echo $user['file1'];?>" class="btn btn-info btn-sm" target="_blank"><i class="fa fa-download"></i></a>
-          <a href="<?php echo site_url('sita/skripsi/'.$user['id']);?>" class="btn btn-success btn-sm" target="_blank"><i class="fa fa-search-plus"></i></a>
-          <a href="<?php echo site_url('admin/judul/edit/'.$user['id']);?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-          <a onClick="return confirm('Apakah anda yakin menghapus data ini?')" href="<?php echo site_url('admin/judul/delete/'.$user['id']);?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+          <a href="http://<?php echo $user['file1'];?>" class="btn btn-info btn-xs" target="_blank"><i class="fa fa-download"></i></a>
+          <a href="<?php echo site_url('sita/skripsi/'.$user['id']);?>" class="btn btn-success btn-xs" target="_blank"><i class="fa fa-search-plus"></i></a>
+          <a href="<?php echo site_url('admin/judul/edit/'.$user['id']);?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
+          <a onClick="return confirm('Apakah anda yakin menghapus data ini?')" href="<?php echo site_url('admin/judul/delete/'.$user['id']);?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
         </td>
         </tr>
         <?php $no++; } ?>

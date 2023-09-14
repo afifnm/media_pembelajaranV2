@@ -3,7 +3,13 @@
 	$pdf->SetFont('times', '', 12);
 	$pdf->AddPage();
 	$no = 1;
-	$pdf->Cell(0 ,5,'Data Mahasiswa Bimbingan '.$id.' '. $this->CRUD_model->namadosen($id_dosen),0,1);
+	if($id==3){
+		$pdf->Cell(0 ,5,'Data Mahasiswa Ketua Penguji '. $this->CRUD_model->namadosen($id_dosen),0,1);
+	} else if($id==4){
+		$pdf->Cell(0 ,5,'Data Mahasiswa Sekretaris Penguji '. $this->CRUD_model->namadosen($id_dosen),0,1);
+	} else {
+		$pdf->Cell(0 ,5,'Data Mahasiswa Bimbingan '.$id.' '. $this->CRUD_model->namadosen($id_dosen),0,1);
+	}
 	$pdf->Cell(10 ,5,'No',1,0);
 	$pdf->Cell(30 ,5,'NIM',1,0);
 	$pdf->Cell(70 ,5,'Nama',1,0);
