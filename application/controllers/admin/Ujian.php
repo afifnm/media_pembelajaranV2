@@ -76,7 +76,7 @@ class Ujian extends MY_Controller
                 $nomor = $tahun.'.'.$count;
               }
         $date = date('Y-m-d');
-        $data = array(
+        $data = array( 
               'no_ujian' => $nomor,
               'penguji1' => $this->input->post('penguji1'),
               'penguji2' => $this->input->post('penguji2'),

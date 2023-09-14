@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2023 at 04:55 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.31
+-- Waktu pembuatan: 14 Sep 2023 pada 08.53
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `agenda`
+-- Struktur dari tabel `agenda`
 --
 
 CREATE TABLE `agenda` (
@@ -36,7 +36,7 @@ CREATE TABLE `agenda` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dosen`
+-- Struktur dari tabel `dosen`
 --
 
 CREATE TABLE `dosen` (
@@ -47,7 +47,7 @@ CREATE TABLE `dosen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `dosen`
+-- Dumping data untuk tabel `dosen`
 --
 
 INSERT INTO `dosen` (`id_dosen`, `nama`, `email`, `wa`) VALUES
@@ -73,7 +73,7 @@ INSERT INTO `dosen` (`id_dosen`, `nama`, `email`, `wa`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `file`
+-- Struktur dari tabel `file`
 --
 
 CREATE TABLE `file` (
@@ -83,7 +83,7 @@ CREATE TABLE `file` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `file`
+-- Dumping data untuk tabel `file`
 --
 
 INSERT INTO `file` (`id`, `nama`, `created_at`) VALUES
@@ -93,7 +93,7 @@ INSERT INTO `file` (`id`, `nama`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `informasi`
+-- Struktur dari tabel `informasi`
 --
 
 CREATE TABLE `informasi` (
@@ -107,7 +107,7 @@ CREATE TABLE `informasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `informasi`
+-- Dumping data untuk tabel `informasi`
 --
 
 INSERT INTO `informasi` (`id`, `judul`, `isi`, `tanggal`, `updated_at`, `foto`, `id_kategori`) VALUES
@@ -220,7 +220,7 @@ INSERT INTO `informasi` (`id`, `judul`, `isi`, `tanggal`, `updated_at`, `foto`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `judul`
+-- Struktur dari tabel `judul`
 --
 
 CREATE TABLE `judul` (
@@ -253,7 +253,7 @@ CREATE TABLE `judul` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `judul`
+-- Dumping data untuk tabel `judul`
 --
 
 INSERT INTO `judul` (`id`, `no_ujian`, `nama`, `nim`, `password`, `no_hp`, `email`, `dosen1`, `dosen2`, `tanggal_judul`, `tanggal_daftar`, `jenis_penelitian`, `judul`, `judul2`, `file1`, `file2`, `tahap`, `penguji1`, `penguji2`, `penguji3`, `penguji4`, `tanggal_ujian`, `jam1`, `jam2`, `ruang`, `catatan`) VALUES
@@ -465,7 +465,6 @@ INSERT INTO `judul` (`id`, `no_ujian`, `nama`, `nim`, `password`, `no_hp`, `emai
 (296, '2022.051', 'TIFANI', 'K6418070', '11des99', '083116001994', 'tifani1211@student.uns.ac.id', '3', '1', '2022-09-13', '2022-09-14', 'Kualitatif', 'PERAN GURU PENDIDIKAN PANCASILA DAN KEWARGANEGARAAN DALAM PENGUATAN LITERASI DIGITAL SISWA (STUDI DI SMA NEGERI 5 SURAKARTA)', 'THE ROLE OF PANCASILA AND CIVIC EDUCATION TEACHERS IN STRENGTHENING STUDENTS\' DIGITAL LITERACY (STUDY AT SMA NEGERI 5 SURAKARTA)', 'drive.google.com/file/d/1pDRHUVVMnVNu0nfuvjJUJs5B5z_cNjHe/view?usp=sharing', 'drive.google.com/drive/folders/1uQGjUjMr_ta7wBZuJpZENPnjbWMYGhWb?usp=sharing', 6, 7, 18, 3, 1, '2022-09-15', '10:00:00', '12:00:00', 'Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
 (297, '2022.055', 'Enno Febrianti', 'K6417022', 'ennofebri11', '085648700482', 'ennofebrianti@gmail.com', '3', '5', '2022-09-16', '2022-10-11', 'Kualitatif', 'Strategi Organisasi IPNU IPPNU dalam Penanaman Nilai Tanggung Jawab Pelajar untuk Membentuk Karakter Kewarganegaraan (Studi di PAC IPNU IPPNU Kecamatan Pilangkenceng Kabupaten Madiun)', 'IPNU IPPNU Organizational Strategy in Inculcating the Value of Student Responsibility to Form Citizenship Character (Study at PAC IPNU IPPNU, Pilangkenceng District, Madiun Regency)', 'drive.google.com/file/d/1j6RBH4iAvhK3fdN0GUdDwK1w6JEaGAzv/view?usp=drivesdk', 'drive.google.com/drive/folders/1SeDu4XUXSyrQ_mM6tvyn-zEwZChPmIWr?usp=sharing', 6, 15, 16, 3, 5, '2022-10-13', '13:00:00', '15:00:00', 'Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
 (298, '2023.003', 'Yhulita Kumala Pramurdya ', 'K6419081', 'Yhulita25', '085691130449', 'yhuliak@student.uns.ac.id', '3', '4', '2022-09-25', '2023-01-09', 'Kualitatif', 'Analisis Kesesuaian Bahan Ajar Mata Pelajaran Pendidikan Pancasila Fase E pada Capaian Pembelajaran (Studi di SMA Batik 2 Surakarta)', 'Analysis of the Suitability of Instractional Materials Pancasila Education Lesson Phase E on Learning Outcomes (Study in SMA Batik 2 Surakarta)', 'drive.google.com/file/d/1Mva7tSWLKcwlMpc2cGcqxHvcOH3ofFi2/view?usp=sharing', 'drive.google.com/drive/folders/1ym2WkYwpXrmPiWcU31Rv3DMqK9awtQBR?usp=share_link', 6, 2, 18, 3, 4, '2023-01-19', '10:00:00', '12:00:00', 'Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
-(299, '0', 'Rifki Zhulfian Najid', 'K6419060', 'tempertrap', '085702203880', 'rzhulfian@gmail.com', '11', '2', '2022-10-03', '0000-00-00', 'Kualitatif', 'Peran Guru Pendidikan Pancasila dan Kewarganegaraan Dalam Mengelola Transisi Pembelajaran Daring Ke Luring di Sekolah Menengah Atas Negeri 2 Sukoharjo.', 'The Role Of a Pancasila and Civics Teacher in Managing The Online Learning Transition To Offline During The Covid-19 Pandemic At Senior Highschool 2 Sukoharjo.', 'drive.google.com/folderview?id=1DAWuXx1sr2gvtkR9YVKOiBZO38brvDU9', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
 (300, '0', 'Rifdah Dhiya Ul\'haq', 'K6418061', 'Ismanto71', '085229630908', 'rifdahdhiya23@student.uns.ac.id', '4', '3', '2022-10-04', '0000-00-00', 'Kualitatif', 'Pemenuhan Akses Atas Hak Kewarganegaraan Di Bidang Kesehatan bagi Masyarakat Miskin Terhadap Pelayanan Program BPJS Kesehatan (Studi Kasus di Desa Jatisawit, Kecamatan Bumiayu, Kabupaten Brebes)', 'Fulfillment of Access to Rights Citizenship in the Field Health for the Community Poor Service BPJS Health Program (Case Study in Jatisawit Village, District Bumiayu, Brebes Regency)', 'drive.google.com/drive/folders/1h9Cj0uNc7HxtOvmjiq8kNd2FCpO8n8wChttps://drive.google.com/drive/folders/1h9Cj0uNc7HxtOvmjiq8kNd2FCpO8n8wC', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
 (301, '2022.064', 'Friskila Suseno', 'K6417026', 'friskila30', '085800706429', 'friskila.kiki99@student.uns.ac.id', '12', '2', '2022-10-05', '2022-11-01', 'Research dan Development', 'PENGEMBANGAN APLIKASI TEBAK GAMBAR SEBAGAI MEDIA PEMBELAJARAN PPKN SMP KELAS VII KD 3.4 YANG BERORIENTASI MENINGKATKAN DAYA TARIK SISWA', 'Development of Civics learning for class VII kd 3.4 With An Application for Guessing Pictures Oriented to Increasing Student Attractiveness', 'https://drive.google.com/drive/folders/1q8XxvT1_lttRkYgbLPIt3R9MGcYmsFzB?usp=sharing', 'drive.google.com/drive/folders/13UMjT93RpoqwF8C-4GiFSpHjpZBM72Qn?usp=sharing', 6, 15, 19, 12, 2, '2022-10-31', '08:00:00', '10:00:00', 'Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
 (302, '0', 'Deshinta Putri Dewanti', 'K6418018', '201299', '085725003983', 'shiinta.putri@gmail.com', '13', '6', '2022-10-08', '0000-00-00', 'Kualitatif', 'Peran Badan Pengawas Pemilu (Bawaslu) Melalui Sekolah Kaderisasi Pengawas Partisipatif (SKPP) dalam Pendidikan Politik di Kota Surakarta', 'The Role of The General Election Supervisory Agency (BAWASLU) through Participatory Supervisory Cadre School (SKPP) in Political Education in Surakarta', 'drive.google.com/file/d/1X_pvWNdouxMvU7y9iKRdPTjJdY0Z8Z7O/view?usp=sharing', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
@@ -516,9 +515,9 @@ INSERT INTO `judul` (`id`, `no_ujian`, `nama`, `nim`, `password`, `no_hp`, `emai
 (361, '2023.021', 'Devi Dwiyanti ', 'K6419020', '20001128', '082324202825', 'devidwiyanti28@student.uns.ac.id', '5', '1', '2023-05-09', '2023-05-11', 'Kualitatif', 'Strategi Penguatan Karakter Demokratis Melalui Pembelajaran PPKn Berbasis Proyek Pada Siswa Kelas XI Di SMA Negeri Kebakkramat', 'Democratic Character Reinforcement Strategy Through Project Based Civic Education Learning Toward Class XI Students In SMA Negeri Kebakkramat', 'drive.google.com/drive/folders/1jPfyCTe7HjpzXfXMFDU83dUmYKvehsR_', 'drive.google.com/drive/folders/1leWTp4rK6Aih-FejFiVJIqD7XkbC_Cr6', 6, 6, 19, 5, 1, '2023-05-15', '10:00:00', '12:00:00', 'Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
 (362, '2023.023', 'Shafyna Hanun Rahardhani', 'K6419068', 'Surakarta2018', '081273291921', 'rahardhanifina6@gmail.com', '13', '5', '2023-05-15', '2023-05-21', 'Kualitatif', 'Peranan Kegiatan Ekstrakurikuler Patroli Keamanan Sekolah (PKS) dalam Pembentukan Karakter Peduli Sosial Peserta Didik di SMA Negeri 3 Surakarta', 'The Role of School Security Patrol Extracurricular Activities in Building the Socially Caring Character of Students at SMA Negeri 3 Surakarta', 'drive.google.com/drive/folders/1-XKW_jNhSVVl212zFA6yuYyJfElZdxPY', 'drive.google.com/drive/folders/1-ZBZduzkFIUWSJljdSlLrpSelmXIF1B5', 6, 4, 20, 13, 5, '2023-05-23', '10:00:00', '12:00:00', 'Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
 (363, '2023.066', 'Zahro Dhea Risa', 'K6419085', 'zahro2112D', '081215075499', 'zahrodhea21@student.uns.ac.id', '5', '18', '2023-05-16', '2023-08-01', 'Kualitatif', 'EFEKTIVITAS KEGIATAN DRAMA “STOP BULLYING” PROJEK PROFIL PELAJAR PANCASILA UNTUK PENGUATAN DIMENSI KEBHINEKAAN GLOBAL DAN IMPLIKASINYA TERHADAP CIVIC DISPOSITION SISWA (Studi di SMA ISLAM 1 SURAKARTA)', 'THE EFFECTIVENESS OF THE DRAMA ACTIVITY \"STOP BULLYING\" PANCASILA STUDENT PROFILE PROJECT TO STRENGTHEN THE DIMENSION OF GLOBAL DIVERSITY AND IT\'S IMPLICATIONS FOR STUDENT CIVIC DISPOSITION (Study at SMA ISLAM 1 SURAKARTA)', 'https://drive.google.com/drive/folders/1QxXNcGa_qL88VdY4-P-u9LxZcM4R1Dh4', 'drive.google.com/drive/u/0/folders/1c2KzElUvN3xaXKzrYxVLjBw5T0hyecSF', 6, 4, 16, 5, 18, '2023-07-31', '08:00:00', '10:00:00', 'Ruang Podcast Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
-(364, '2023.024', 'Mareta Melandhany', 'K6419041', '16MARET2001', '0895414590564', 'maretamelandhany2001@student.uns.ac.id', '3', '2', '2023-05-28', '2023-06-04', 'Research dan Development', 'Inovasi Desain Pembelajaran Berdiferensiasi Pada Mata Pelajaran Pendidikan Pancasila di SMA Al Islam 1 Surakarta', 'Innovation of Differentiated Learning Design on Pancasila Education at SMA Al Islam 1 Surakarta', 'https://drive.google.com/drive/folders/1rl3NrDHhKVlplZBzVLABUU2iooFMO_bc?usp=share_link', 'drive.google.com/drive/folders/1-C_iMj9_RqstQ-dRAJCbgHCkidKsa-z4?usp=share_link', 6, 1, 20, 3, 2, '2023-06-05', '13:00:00', '15:00:00', 'lab PPKn', 'konsul pak wijianto melalui chat wa, abaikan tanggal sistem');
+(364, '2023.024', 'Mareta Melandhany', 'K6419041', '16MARET2001', '0895414590564', 'maretamelandhany2001@student.uns.ac.id', '3', '2', '2023-05-28', '2023-06-04', 'Research dan Development', 'Inovasi Desain Pembelajaran Berdiferensiasi Pada Mata Pelajaran Pendidikan Pancasila di SMA Al Islam 1 Surakarta', 'Innovation of Differentiated Learning Design on Pancasila Education at SMA Al Islam 1 Surakarta', 'https://drive.google.com/drive/folders/1rl3NrDHhKVlplZBzVLABUU2iooFMO_bc?usp=share_link', 'drive.google.com/drive/folders/1-C_iMj9_RqstQ-dRAJCbgHCkidKsa-z4?usp=share_link', 6, 1, 20, 3, 2, '2023-06-05', '13:00:00', '15:00:00', 'lab PPKn', 'konsul pak wijianto melalui chat wa, abaikan tanggal sistem'),
+(365, '2023.025', 'MUHAMMAD NASYRUR ROHMAN', 'K6419044', 'nasrong220601', '089501159700', 'mhdnasrur01@student.uns.ac.id', '6', '2', '2023-06-07', '2023-06-08', 'Research dan Development', 'PENGEMBANGAN MODUL AJAR MATA PELAJARAN PENDIDIKAN PANCASILA BERORIENTASI LITERASI NUMERASI MENGGUNAKAN MEDIA INFOGRAFIS (STUDI DI SMA NEGERI 1 SUKOHARJO)', 'THE DEVELOPMENT OF NUMERIC LITERACY-ORIENTED TEACHING MODULES OF PANCASILA EDUCATION SUBJECTS USING INFOGRAPHIC MEDIA (STUDY AT SMA NEGERI 1 SUKOHARJO)', 'https://drive.google.com/folderview?id=1yZChp7LEcIW8ewq7luQKLUnXSN9DggVn', 'drive.google.com/folderview?id=1zF63vDd6-z75vx5lHxDXkJr3u8qCjMVB', 6, 14, 18, 6, 2, '2023-06-12', '10:00:00', '12:00:00', 'Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem');
 INSERT INTO `judul` (`id`, `no_ujian`, `nama`, `nim`, `password`, `no_hp`, `email`, `dosen1`, `dosen2`, `tanggal_judul`, `tanggal_daftar`, `jenis_penelitian`, `judul`, `judul2`, `file1`, `file2`, `tahap`, `penguji1`, `penguji2`, `penguji3`, `penguji4`, `tanggal_ujian`, `jam1`, `jam2`, `ruang`, `catatan`) VALUES
-(365, '2023.025', 'MUHAMMAD NASYRUR ROHMAN', 'K6419044', 'nasrong220601', '089501159700', 'mhdnasrur01@student.uns.ac.id', '6', '2', '2023-06-07', '2023-06-08', 'Research dan Development', 'PENGEMBANGAN MODUL AJAR MATA PELAJARAN PENDIDIKAN PANCASILA BERORIENTASI LITERASI NUMERASI MENGGUNAKAN MEDIA INFOGRAFIS (STUDI DI SMA NEGERI 1 SUKOHARJO)', 'THE DEVELOPMENT OF NUMERIC LITERACY-ORIENTED TEACHING MODULES OF PANCASILA EDUCATION SUBJECTS USING INFOGRAPHIC MEDIA (STUDY AT SMA NEGERI 1 SUKOHARJO)', 'https://drive.google.com/folderview?id=1yZChp7LEcIW8ewq7luQKLUnXSN9DggVn', 'drive.google.com/folderview?id=1zF63vDd6-z75vx5lHxDXkJr3u8qCjMVB', 6, 14, 18, 6, 2, '2023-06-12', '10:00:00', '12:00:00', 'Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
 (366, '2023.026', 'Afrizhentaria Nahya', 'K6419002', 'afrizhentarianahya18', '0895390850910', 'afrizhentarian18@student.uns.ac.id', '5', '3', '2023-06-09', '2023-06-13', 'Kualitatif', 'Strategi Pembelajaran Pendidikan Pancasila Dalam Menguatkan Profil Pelajar Pancasila Dimensi Bergotong Royong di SMP Negeri 2 Karangpandan', 'Pancasila Education Learning Strategies In Strengthening The Profile Of Pancasila Students In Dimensions Of Mutual Cooperation At SMP Negeri 2 Karangpandan', 'drive.google.com/drive/folders/1cvOhRadmY_AZk3pKZELtqUQ_O7Dd0lEa', 'drive.google.com/drive/folders/1--cbyAf6uGO1wl7UA28Vrdr7PIRKZtKj', 6, 14, 19, 5, 3, '2023-06-15', '10:00:00', '12:00:00', 'Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
 (367, '2023.027', 'Ryanda saputra', 'K6419064', 'Saputra', '082228333800', 'ryan.putra969@gmail.com', '12', '19', '2023-06-14', '2023-06-15', 'Kualitatif', 'IMPLEMENTASI PROJEK PENGUATAN PROFIL PELAJAR PANCASILA TEMA GAYA HIDUP BERKELANJUTAN  TERHADAP DIMENSI GOTONG ROYONG PADA PESERTA DIDIK DI SMP NEGERI 1 KEBAKKRAMAT', 'IMPLEMENTATION OF THE PROJECT OF STRENGTHENING THE PANCASILA STUDENT PROFILE THEME OF SUSTAINABLE LIFESTYLE ON THE DIMENSIONS OF COLLABORATION ON STUDENTS IN KEBAKKRAMAT STATE 1 JUNIOR HIGH SCHOOL', 'drive.google.com/drive/folders/1qlD4SN01lAtQnC3ht7NTEO7eC8RFyZLg?usp=drive_link', 'drive.google.com/drive/folders/1jnJ_YleAdyxiVPiVkPlS-LTpaR88IhKx?usp=drive_link', 6, 2, 18, 12, 19, '2023-06-20', '10:00:00', '12:00:00', 'Lab PPKn', 'Abaikan tanggal sistem,konsul dengan p wijianto'),
 (368, '2023.029', 'Maharani Tasya Nugrahani', 'K6419040', 'tsya0110', '089662020874', 'mtasya152@gmail.com', '7', '2', '2023-06-16', '2023-06-16', 'Research dan Development', 'PENGEMBANGAN MODUL AJAR PENDIDIKAN PANCASILA BERORIENTASI  PEMBELAJARAN KOOPERATIF  PROJECT BASED LEARNING   (Studi Pada Fase E SMA Negeri 7 Surakarta)', 'DEVELOPMENT OF PANCASILA EDUCATION TEACHING MODULES COOPERATIVE LEARNING ORIENTED PROJECT BASED LEARNING (Study in Phase E of SMA Negeri 7 Surakarta)', 'drive.google.com/file/d/1gkhHWOKs81VAh3RoW1ql9KihpWYgZCAj/view?usp=sharing', 'drive.google.com/drive/folders/1F7xi9VRTT7FLQMPBJriCEkpYJvGpCDH-?usp=drive_link', 6, 1, 18, 7, 2, '2023-06-20', '09:00:00', '11:00:00', 'Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
@@ -547,7 +546,7 @@ INSERT INTO `judul` (`id`, `no_ujian`, `nama`, `nim`, `password`, `no_hp`, `emai
 (391, '0', 'Indriya Dinna Mardiani', 'K6420037', 'roticoklat28', '08978291735', 'indriyadinna17@student.uns.ac.id', '2', '1', '2023-07-26', '0000-00-00', 'Research dan Development', 'Pengembangan Instrumen Asesmen Diagnostik Kognitif Berbantuan Quizziz Pada Mata Pelajaran Pendidikan Pancasila (Studi Pada Fase F SMA Negeri 5 Surakarta)', 'Development of a Quizziz-Assisted Cognitive Diagnostic Assessment Instrument for Pancasila Education (Study in Phase F of SMA Negeri 5 Surakarta)', 'drive.google.com/file/d/1cZvkLKpRCAy5SRAfXGR97z9bQO1t7z6Z/view?usp=sharing', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
 (392, '2023.056', 'Tri Murniati', 'K6416062', 'trimurni12', '087736391283', 'trimurni12@student.uns.ac.id', '1', '6', '2023-07-27', '2023-07-28', 'Kualitatif', 'Peran Lembaga Pemberdayaan Masyarakat Desa dalam Meningkatkan Partisipasi Masyarakat terhadap Pembangunan Desa sebagai Perwujudan dari Civic Participatory', 'The Role of Village Community Empowerment Institutions in Increasing Community Participation in Village Development as an Embodiment of Civic Participatory', 'https://drive.google.com/drive/folders/1CJ_HyXgmusjX6QR7pLZGk4qc-VJJ09mA', 'https://drive.google.com/drive/folders/1UBR2M3Y5S9kjg4GPyMYRVVKlwrNXaFCI', 6, 14, 18, 1, 6, '2023-07-28', '13:00:00', '15:00:00', 'Ruang Podcast Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
 (393, '2023.055', 'Putriana Handayani Rahayu', 'K6418058', 'akupastibisa', '083116459638', 'putrianahr@student.uns.ac.id', '4', '3', '2023-07-28', '2023-07-28', 'Kualitatif', 'Pembentukan Daya Kritis Siswa pada Pembelajaran Pendidikan Pancasila melalui Putusan Mahkamah Konstitusi (Studi Kasus di MAN 2 Surakarta)', 'Forming Student Critical Thinking in Pancasila Education through Constitutional Court Ruling (Case Study in MAN 2 Surakarta)', 'drive.google.com/file/d/1xhFUShxsT5tNvAlbW5B0UyynWFdabToq/view?usp=drive_link', 'drive.google.com/drive/folders/1cwc9UkLxfhH4Y0QkUmHPWDHnh3LlDBAH?usp=drive_link', 6, 13, 20, 4, 3, '2023-07-27', '10:00:00', '12:00:00', 'Ruang Podcast Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
-(394, '0', 'Andrean Priyo Rustari', 'K6418008', 'kerisbatik1', '085155070204', 'andrepriyo1@gmail.com', '1', '16', '2023-07-28', '2023-09-06', 'Kualitatif', 'PERAN KARANG TARUNA” TARUNA MANDIRI” DALAM PENDIDIKAN KEWARGANEGARAAN KEMASYARAKATAN SEBAGAI SARANA MEWUJUDKAN KEPEDULIAN SOSIAL REMAJA', 'THE ROLE OF KARANG TARUNA \"TARUNA MANDIRI\" IN COMMUNITY CITIZENSHIP EDUCATION AS A MEANS OF REALIZING YOUTH\'S SOCIAL CARE', 'https://drive.google.com/file/d/1GVV3wqwEgoAoW0HaGo9SubC82D9dRaAG/view?usp=drive_link', 'drive.google.com/drive/folders/1-2-Jz4J3pYCpfxVbaSlFfly7Rxq-3IWc', 4, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', 'berkas tidak terbaca silahkan cek link googledrive'),
+(394, '2023.072', 'Andrean Priyo Rustari', 'K6418008', 'kerisbatik1', '085155070204', 'andrepriyo1@gmail.com', '1', '16', '2023-07-28', '2023-09-11', 'Kualitatif', 'PERAN KARANG TARUNA” TARUNA MANDIRI” DALAM PENDIDIKAN KEWARGANEGARAAN KEMASYARAKATAN SEBAGAI SARANA MEWUJUDKAN KEPEDULIAN SOSIAL REMAJA', 'THE ROLE OF KARANG TARUNA \"TARUNA MANDIRI\" IN COMMUNITY CITIZENSHIP EDUCATION AS A MEANS OF REALIZING YOUTH\'S SOCIAL CARE', 'https://drive.google.com/file/d/1GVV3wqwEgoAoW0HaGo9SubC82D9dRaAG/view?usp=drive_link', 'drive.google.com/drive/folders/1-2-Jz4J3pYCpfxVbaSlFfly7Rxq-3IWc', 6, 9, 19, 1, 16, '2023-09-13', '10:00:00', '12:00:00', 'Ruang Podcast Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
 (395, '2023.062', 'SITI AMINAH', 'K6416059', 'Carpediem#1999', '082242947750', '23sitiamin@gmail.com', '7', '9', '2023-07-29', '2023-07-31', 'Kualitatif', 'PERAN PAGUYUBAN SRIKANDI DALAM UPAYA MENINGKATKAN SIKAP CINTA TANAH AIR PEMUDA DESA MIRI MELALUI KARAWITAN', 'THE ROLE OF PAGUYUBAN SRIKANDI IN IMPROVING THE NATIONALISM OF THE YOUTH OF MIRI VILLAGE THROUGH KARAWITAN', 'https://drive.google.com/drive/folders/1KJ-13ZB0_W8h_aAS4yEGLgZjndKkYTWl?usp=sharing', 'drive.google.com/drive/folders/1-XNUQ0POa8xPpE540BLDSVDa42D1NJOF', 6, 3, 20, 7, 9, '2023-07-31', '10:00:00', '12:00:00', 'Ruang Podcast Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
 (396, '2023.058', 'Lu\'lu\' Inayaturrahman', 'K6416031', 'luluk17@', '085726624182', 'luluinaaa@gmail.com', '4', '5', '2023-07-30', '2023-07-31', 'Kualitatif', 'Kompetensi Pedagogik Guru  PPKn dalam Menyusun Rencana Pelaksanaan Pembelajaran (RPP) dan Implementasinya pada Pembelajaran di Kelas XI', 'Pedagogic Competence of PPKn Teachers in Preparing Learning Implementation Plans (RPP) and Their Implementation in Class XI Learning', 'drive.google.com/file/d/1Pl0OQnXRF68H4hZkodJv95K9xzeIJPQa/view?usp=drivesdk', 'drive.google.com/drive/folders/1-0NfTz9GjoOfHV_N_Q_XI27CmWuJaQBZ', 6, 2, 18, 4, 5, '2023-07-31', '10:00:00', '12:00:00', 'Lab PPKn', 'Konsultasi kepada pak wijianto'),
 (397, '2023.063', 'Nurul Hiendayati Mursito', 'K6416041', 'uyun1123', '085802119726', 'nurulhiendayti11@gmail.com', '1', '16', '2023-07-30', '2023-07-31', 'Kualitatif', 'Internalisasi Nilai Nasionalis Pada Peserta Didik Untuk Membentuk Good Citizen (Studi di SMA Negeri 2 Sukoharjo)', 'Internalization of Nationalist Value in Students to Form Good Citizen (Studies in SMA Negeri 2 Sukoharjo)', 'https://drive.google.com/file/d/1kgYnI7MQNoivy7IdABrV12tFNBCKSDgn/view?usp=drivesdk', 'drive.google.com/file/d/1lkOoc03syuyKiGsT1gNmkhecy7BYfpfT/view?usp=drivesdk', 6, 5, 19, 1, 16, '2023-07-31', '13:00:00', '15:00:00', 'Ruang Podcast Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
@@ -559,12 +558,15 @@ INSERT INTO `judul` (`id`, `no_ujian`, `nama`, `nim`, `password`, `no_hp`, `emai
 (403, '2023.067', 'Rina Wahyuningtyas', 'K6416051', '15061998', '085869471727', 'rinawahyu@student.uns.ac.id', '15', '7', '2023-07-31', '2023-08-01', 'Kualitatif', 'Perkawinan Di Bawah Umur dan Implikasinya terhadap Hak Perempuan Atas Pendidikan (Studi Kasus di Kecamatan Mojogedang Kabupaten Karanganyar)', 'Underage Marriage and Its Implications for Women\'s Right to Education (Case Study in Mojogedang District, Karanganyar Regency', 'drive.google.com/file/d/11-n4cdT71UpM8F2lhk62N8l9WZCsZ6HB/view?usp=drivesdk', 'drive.google.com/drive/folders/10fRsPLjcixEL8lqI9jQANMe6LSSwhy-o', 6, 14, 20, 15, 7, '2023-07-31', '10:00:00', '12:00:00', 'Lab PPKn', 'Konsultasi kepada pak wijianto'),
 (404, '2023.069', 'Vinanda Irawati', 'K6416064', 'Muslimah7', '0882007573090', 'vinandairawati@gmail.com', '3', '12', '2023-08-02', '2023-08-02', 'Kualitatif', 'STRATEGI PEMERINTAH DAERAH DALAM MENGATASI PROSTITUSI MELALUI PROGRAM THE NEW KEMUKUS (STUDI DI OBJEK WISATA GUNUNG KEMUKUS DESA PENDEM KECAMATAN SUMBERLAWANG KABUPATEN SRAGEN)', 'LOCAL GOVERNMENT STRATEGY IN OVERCOMING PROSTITUTION THROUGH THE NEW KEMUKUS PROGRAM (STUDY IN MOUNT KEMUKUS TOURISM OBJECTS PENDEM VILLAGE, SUMBERLAGANG DISTRICT, SRAGEN REGENCY)', 'drive.google.com/drive/folders/1IVgkmI5-mg3aGyGTZJBIwtKP0NfPSzYS', 'drive.google.com/drive/folders/1IzFR-LGJN2Aom4-d4OI-gEc9e0fM1nGB', 6, 7, 18, 3, 12, '2023-07-31', '10:00:00', '12:00:00', 'Ruang Podcast Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
 (405, '0', 'Mochamad naufal hasib', 'K6420046', 'yulia304', '085601654570', 'naufalhasib@student.uns.ac.id', '2', '1', '2023-08-21', '0000-00-00', 'Research dan Development', 'Pengembangan Bahan Ajar Pendidikan Pancasila Berbasis Komik (Studi Pada Fase F SMA Batik 2 Surakarta)', 'Development of Comic-Based Pancasila Educational Teaching Materials (Study in Phase F of SMA Batik 2 Surakarta)', 'drive.google.com/drive/folders/1QlsfC_-CIW_lm_lxTBY9j0cTCeMT_Crb?usp=sharing', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
-(406, '0', 'NADILA RISTA SARASASTI', 'K6420050', 'ahmadsodirun13', '0895423611155', 'nadilarista13@student.uns.ac.id', '6', '0', '2023-08-27', '0000-00-00', 'Kualitatif', 'Penguatan Civic Responsibility Melalui Unit Kegiatan Mahasiswa  Pramuka (Studi Pada Anggota Pramuka Universitas Sebelas Maret)', 'Strengthening Civic Responsibility Through Student Scout Activity Units (Study of Scout Members at Sebelas Maret University)', 'https://drive.google.com/drive/folders/1HLPLMgQTIrgW_8LB9OQCXxuZNxdYR4Xk?usp=sharing', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-');
+(406, '0', 'NADILA RISTA SARASASTI', 'K6420050', 'ahmadsodirun13', '0895423611155', 'nadilarista13@student.uns.ac.id', '6', '5', '2023-08-27', '0000-00-00', 'Kualitatif', 'Penguatan Civic Responsibility Melalui Unit Kegiatan Mahasiswa  Pramuka (Studi Pada Anggota Pramuka Universitas Sebelas Maret)', 'Strengthening Civic Responsibility Through Student Scout Activity Units (Study of Scout Members at Sebelas Maret University)', 'https://drive.google.com/drive/folders/1HLPLMgQTIrgW_8LB9OQCXxuZNxdYR4Xk?usp=sharing', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
+(407, '0', 'Rifki Zhulfian Najid', 'K6419060', 'tempertrap', '085702203880', 'rzhulfian16@student.uns.ac.id', '11', '2', '2023-09-13', '0000-00-00', 'Kualitatif', 'Strategi Guru Pendidikan Pancasila Dalam Penguatan Sikap Kewarganegaraan Peserta Didik di Sekolah Penggerak. (Studi di SMA Al-Islam 1 Surakarta)', 'Pancasila Education Teacher Strategy in Strengthening Students\' Cityzenship Attitudes in Driving Schools. (Study at SMA Al-Islam 1 Surakarta)', 'drive.google.com/folderview?id=1DAWuXx1sr2gvtkR9YVKOiBZO38brvDU9', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
+(408, '0', 'Lukluk Indah Nurjanah', 'K6419039', 'luklukana2121', '089613101999', 'luklukindah1310@student.uns.ac.id', '12', '5', '2023-09-13', '0000-00-00', 'Kualitatif', 'Pembentukan Kesadaran Peduli Lingkungan Melalui Program Jumat Bebas Emisi (JBEm) di Universitas Sebelas Maret ', 'Formation of Environmental Awareness through the Friday Emission Free Program (JBEm) at Sebelas Maret University ', 'https://drive.google.com/file/d/18G3y8DWe_QTulqiigh_wpABvsowcNFyK/view?usp=sharing', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
+(409, '0', 'Deta Nur Aryana', 'K6419019', 'detanur1012', '085747771668', 'detanuraryana@student.uns.ac.id', '2', '20', '2023-09-13', '0000-00-00', 'Research dan Development', 'Inovasi Modul Ajar Pembelajaran Pendidikan Pancasila Kelas X Berorientasi TPACK (Technological Pedagogical Content Knowledge) di SMA Negeri 1 Banyudono', 'INNOVATION IN TEACHING MODULES FOR PANCASILA EDUCATION IN GRADE X WITH A FOCUS ON TECHNOLOGICAL PEDAGOGICAL CONTENT KNOWLEDGE AT SMA NEGERI 1 BANYUDONO', 'drive.google.com/drive/folders/1tUXk0gkf4p17lu2yipusB40xMrN7NJJT?usp=drive_link', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -577,7 +579,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `kategori`, `urutan`, `id_main`, `main`, `created_at`) VALUES
@@ -613,7 +615,7 @@ INSERT INTO `kategori` (`id_kategori`, `kategori`, `urutan`, `id_main`, `main`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `konfigurasi`
+-- Struktur dari tabel `konfigurasi`
 --
 
 CREATE TABLE `konfigurasi` (
@@ -629,7 +631,7 @@ CREATE TABLE `konfigurasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `konfigurasi`
+-- Dumping data untuk tabel `konfigurasi`
 --
 
 INSERT INTO `konfigurasi` (`id`, `nama_website`, `favicon`, `logo`, `judul_profil`, `deskripsi`, `welcome`, `tanggal_awal`, `tanggal_akhir`) VALUES
@@ -638,7 +640,7 @@ INSERT INTO `konfigurasi` (`id`, `nama_website`, `favicon`, `logo`, `judul_profi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kritikdansaran`
+-- Struktur dari tabel `kritikdansaran`
 --
 
 CREATE TABLE `kritikdansaran` (
@@ -651,7 +653,7 @@ CREATE TABLE `kritikdansaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kritikdansaran`
+-- Dumping data untuk tabel `kritikdansaran`
 --
 
 INSERT INTO `kritikdansaran` (`id`, `nama`, `email`, `no_hp`, `isi`, `created_at`) VALUES
@@ -660,7 +662,7 @@ INSERT INTO `kritikdansaran` (`id`, `nama`, `email`, `no_hp`, `isi`, `created_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `link`
+-- Struktur dari tabel `link`
 --
 
 CREATE TABLE `link` (
@@ -672,7 +674,7 @@ CREATE TABLE `link` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `link`
+-- Dumping data untuk tabel `link`
 --
 
 INSERT INTO `link` (`id`, `judul`, `link`, `lokasi`, `created_at`) VALUES
@@ -685,7 +687,7 @@ INSERT INTO `link` (`id`, `judul`, `link`, `lokasi`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mahasiswa`
+-- Struktur dari tabel `mahasiswa`
 --
 
 CREATE TABLE `mahasiswa` (
@@ -695,7 +697,7 @@ CREATE TABLE `mahasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mahasiswa`
+-- Dumping data untuk tabel `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`id`, `nim`, `nama`) VALUES
@@ -1262,7 +1264,7 @@ INSERT INTO `mahasiswa` (`id`, `nim`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `main_sub`
+-- Struktur dari tabel `main_sub`
 --
 
 CREATE TABLE `main_sub` (
@@ -1273,7 +1275,7 @@ CREATE TABLE `main_sub` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `main_sub`
+-- Dumping data untuk tabel `main_sub`
 --
 
 INSERT INTO `main_sub` (`id_main`, `main_sub`, `urutan`, `jenis`) VALUES
@@ -1287,7 +1289,7 @@ INSERT INTO `main_sub` (`id_main`, `main_sub`, `urutan`, `jenis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sarana`
+-- Struktur dari tabel `sarana`
 --
 
 CREATE TABLE `sarana` (
@@ -1300,7 +1302,7 @@ CREATE TABLE `sarana` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -1324,7 +1326,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `nama`, `level`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `foto`, `active`, `last_login`, `ig`, `youtube`, `fb`, `wa`, `tw`) VALUES
@@ -1335,161 +1337,161 @@ INSERT INTO `user` (`id`, `username`, `password`, `nama`, `level`, `tempat_lahir
 --
 
 --
--- Indexes for table `agenda`
+-- Indeks untuk tabel `agenda`
 --
 ALTER TABLE `agenda`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `dosen`
+-- Indeks untuk tabel `dosen`
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`id_dosen`);
 
 --
--- Indexes for table `file`
+-- Indeks untuk tabel `file`
 --
 ALTER TABLE `file`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `informasi`
+-- Indeks untuk tabel `informasi`
 --
 ALTER TABLE `informasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `judul`
+-- Indeks untuk tabel `judul`
 --
 ALTER TABLE `judul`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indexes for table `konfigurasi`
+-- Indeks untuk tabel `konfigurasi`
 --
 ALTER TABLE `konfigurasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kritikdansaran`
+-- Indeks untuk tabel `kritikdansaran`
 --
 ALTER TABLE `kritikdansaran`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `link`
+-- Indeks untuk tabel `link`
 --
 ALTER TABLE `link`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `mahasiswa`
+-- Indeks untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `main_sub`
+-- Indeks untuk tabel `main_sub`
 --
 ALTER TABLE `main_sub`
   ADD PRIMARY KEY (`id_main`);
 
 --
--- Indexes for table `sarana`
+-- Indeks untuk tabel `sarana`
 --
 ALTER TABLE `sarana`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `agenda`
+-- AUTO_INCREMENT untuk tabel `agenda`
 --
 ALTER TABLE `agenda`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `dosen`
+-- AUTO_INCREMENT untuk tabel `dosen`
 --
 ALTER TABLE `dosen`
-  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `file`
+-- AUTO_INCREMENT untuk tabel `file`
 --
 ALTER TABLE `file`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `informasi`
+-- AUTO_INCREMENT untuk tabel `informasi`
 --
 ALTER TABLE `informasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=208;
 
 --
--- AUTO_INCREMENT for table `judul`
+-- AUTO_INCREMENT untuk tabel `judul`
 --
 ALTER TABLE `judul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=407;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=410;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- AUTO_INCREMENT for table `konfigurasi`
+-- AUTO_INCREMENT untuk tabel `konfigurasi`
 --
 ALTER TABLE `konfigurasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `kritikdansaran`
+-- AUTO_INCREMENT untuk tabel `kritikdansaran`
 --
 ALTER TABLE `kritikdansaran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `link`
+-- AUTO_INCREMENT untuk tabel `link`
 --
 ALTER TABLE `link`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `mahasiswa`
+-- AUTO_INCREMENT untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=580;
 
 --
--- AUTO_INCREMENT for table `main_sub`
+-- AUTO_INCREMENT untuk tabel `main_sub`
 --
 ALTER TABLE `main_sub`
   MODIFY `id_main` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `sarana`
+-- AUTO_INCREMENT untuk tabel `sarana`
 --
 ALTER TABLE `sarana`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
