@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 14 Sep 2023 pada 08.53
--- Versi server: 10.4.24-MariaDB
--- Versi PHP: 7.4.29
+-- Host: localhost:3306
+-- Waktu pembuatan: 14 Sep 2023 pada 23.11
+-- Versi server: 10.3.39-MariaDB-cll-lve
+-- Versi PHP: 8.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `agenda` (
   `id` int(11) NOT NULL,
   `agenda` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -41,34 +41,32 @@ CREATE TABLE `agenda` (
 
 CREATE TABLE `dosen` (
   `id_dosen` int(11) NOT NULL,
-  `nama` varchar(100) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `wa` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nama` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `dosen`
 --
 
-INSERT INTO `dosen` (`id_dosen`, `nama`, `email`, `wa`) VALUES
-(1, 'Dr. Winarno., S.Pd., M.Si', '', ''),
-(2, 'Wijianto., S.Pd., M.Sc', '', ''),
-(3, 'Dr. Muh. Hendri. Nuryadi., S.Pd., M.Sc', '', ''),
-(4, 'Dr. Machmud Al-Rasyid., S.H., M.Si', '', ''),
-(5, 'Dr. Moh. Muchtarom. S.Ag., M.SI', '', ''),
-(6, 'Erna Yuliandari., S.H ., M.A', '', ''),
-(7, 'Dr. Rini Triastuti., S.H., M.Hum', '', ''),
-(8, 'Dr. Sri Haryati., M.Pd', '', ''),
-(9, 'Dr. Rusnaini., M.Si', '', ''),
-(11, 'Dr. Hassan Suryono., S.H., M.H., M.Pd', '', ''),
-(12, 'Dr. Dewi Gunawati., S.H., M.Hum', '', ''),
-(13, 'Prof. Dr. Triyanto., S.H., M.Hum', '', ''),
-(14, 'Dr. Triana Rejekiningsih., S.H., K.N., M.Pd', '', ''),
-(15, 'Dr. Rima Vien Permata H., S.H., M.H', '', ''),
-(16, 'Yudi Ariana., S.H., M.H', '', ''),
-(18, 'Raharjo, S.Pd.,M.Sc.', '', ''),
-(19, 'Anis Suryaningsih, S.Pd., M.Sc', '', ''),
-(20, 'Widya Noventari, S.Pd.,M.Sc', '', '');
+INSERT INTO `dosen` (`id_dosen`, `nama`) VALUES
+(1, 'Dr. Winarno., S.Pd., M.Si'),
+(2, 'Wijianto., S.Pd., M.Sc'),
+(3, 'Dr. Muh. Hendri. Nuryadi., S.Pd., M.Sc'),
+(4, 'Dr. Machmud Al-Rasyid., S.H., M.Si'),
+(5, 'Dr. Moh. Muchtarom. S.Ag., M.SI'),
+(6, 'Erna Yuliandari., S.H ., M.A'),
+(7, 'Dr. Rini Triastuti., S.H., M.Hum'),
+(8, 'Dr. Sri Haryati., M.Pd'),
+(9, 'Dr. Rusnaini., M.Si'),
+(11, 'Dr. Hassan Suryono., S.H., M.H., M.Pd'),
+(12, 'Dr. Dewi Gunawati., S.H., M.Hum'),
+(13, 'Prof. Dr. Triyanto., S.H., M.Hum'),
+(14, 'Dr. Triana Rejekiningsih., S.H., K.N., M.Pd'),
+(15, 'Dr. Rima Vien Permata H., S.H., M.H'),
+(16, 'Yudi Ariana., S.H., M.H'),
+(18, 'Raharjo, S.Pd.,M.Sc.'),
+(19, 'Anis Suryaningsih, S.Pd., M.Sc'),
+(20, 'Widya Noventari, S.Pd.,M.Sc');
 
 -- --------------------------------------------------------
 
@@ -80,7 +78,7 @@ CREATE TABLE `file` (
   `id` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `file`
@@ -104,7 +102,7 @@ CREATE TABLE `informasi` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `foto` varchar(50) NOT NULL,
   `id_kategori` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `informasi`
@@ -250,7 +248,7 @@ CREATE TABLE `judul` (
   `jam2` time NOT NULL,
   `ruang` varchar(100) NOT NULL,
   `catatan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `judul`
@@ -576,7 +574,7 @@ CREATE TABLE `kategori` (
   `id_main` int(11) NOT NULL,
   `main` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `kategori`
@@ -628,7 +626,7 @@ CREATE TABLE `konfigurasi` (
   `welcome` varchar(200) NOT NULL,
   `tanggal_awal` date NOT NULL,
   `tanggal_akhir` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `konfigurasi`
@@ -650,7 +648,7 @@ CREATE TABLE `kritikdansaran` (
   `no_hp` varchar(20) NOT NULL,
   `isi` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `kritikdansaran`
@@ -671,7 +669,7 @@ CREATE TABLE `link` (
   `link` varchar(50) NOT NULL,
   `lokasi` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `link`
@@ -694,7 +692,7 @@ CREATE TABLE `mahasiswa` (
   `id` int(11) NOT NULL,
   `nim` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `mahasiswa`
@@ -1272,7 +1270,7 @@ CREATE TABLE `main_sub` (
   `main_sub` varchar(30) NOT NULL,
   `urutan` int(11) NOT NULL,
   `jenis` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `main_sub`
@@ -1297,7 +1295,7 @@ CREATE TABLE `sarana` (
   `judul` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -1323,7 +1321,7 @@ CREATE TABLE `user` (
   `fb` varchar(50) NOT NULL,
   `wa` varchar(50) NOT NULL,
   `tw` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `user`
