@@ -141,7 +141,10 @@
  
         <!-- /.box-body -->
         <div class="box-footer">
+          <?php $no_hp = intval($u->no_hp);?>
           <a href="<?php echo site_url('admin/ujian');?>" class="btn btn-default">Cancel</a>
+          <a target="_blank" href="https://api.whatsapp.com/send?phone=+62<?=$no_hp;?>&text=Pemberitahuan Mahasiswa | Sistem Informasi Tugas Akhir (SITA) PPKn UNS"
+          class="btn btn-success pull-right" style="margin-left:5px;">Whatsapp</a>
           <button type="submit" class="btn btn-success pull-right">Simpan</button>
         </div>
         <!-- /.box-footer -->

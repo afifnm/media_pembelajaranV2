@@ -169,6 +169,52 @@ class SITA extends MY_Controller
       );
        $this->load->view('ujian',array_merge($data));
     }
+    public function reset(){
+      $site = $this->Konfigurasi_model->listing();
+      $data = array(
+          'title'                 => 'Reset Password | '.$site['nama_website'],
+          'favicon'               => $site['favicon'],
+          'site'                  => $site,
+      );
+       $this->load->view('reset',array_merge($data));
+    }
+    public function reset_password(){
+      $site = $this->Konfigurasi_model->listing();
+      $email = $this->input->post('email');
+      $this->db->from('judul');
+      $this->db->where('email',$email);
+      $mhs = $this->db->get()->row();
+      if($mhs==NULL){
+        $notifikasi = "Email yang kamu masukan tidak terdaftar dalam pendaftaran judul skripsi, cek kembali email yang kamu masukan.";
+      } else {
+        $notifikasi = "Cek pesan masuk di email kamu untuk melihat password.";
+        $config = Array(  
+          'protocol' => 'smtp',  
+          'smtp_host' => 'mail.pipapip.web.id',  
+          'smtp_port' => 587,  
+          'smtp_user' => 'webmaster@pipapip.web.id',   
+          'smtp_pass' => 'mediapkn2019',   
+          'mailtype' => 'html', 
+          'charset' => 'iso-8859-1'
+          );  
+          $this->load->library('email', $config);  
+          $this->email->set_newline("\r\n");  
+          $this->email->from('webmaster@pipapip.web.id', 'Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+         $this->email->to($email); 
+          $this->email->subject('Pemberitahuan Mahasiswa Reset Password | Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+          $this->email->message('Pemberitahuan Mahasiswa dengan nama '.$mhs->nama.' ('.$mhs->nim.') berikut password kamu.
+          <br>Password : '.$mhs->password);
+        $this->email->send();
+    
+      }
+      $data = array(
+        'title'                 => 'SITA | '.$site['nama_website'],
+        'notifikasi'            => $notifikasi,
+        'favicon'               => $site['favicon'],
+        'site'                  => $site,
+      );
+      $this->load->view('notifikasi',array_merge($data));   
+    }
     public function inputjudul(){
       date_default_timezone_set("Asia/Jakarta");
       $date = date('Y-m-d');
@@ -250,18 +296,18 @@ class SITA extends MY_Controller
             'nim' => $this->input->post('nim'),
         );
         //konfigurasi email
-        $config = Array(  
-          'protocol' => 'smtp',  
-          'smtp_host' => 'mail.mediainformasipkn.id',  
-          'smtp_port' => 587,  
-          'smtp_user' => 'admin@mediainformasipkn.id',   
-          'smtp_pass' => 'mediapkn2019',   
-          'mailtype' => 'html',   
-          'charset' => 'iso-8859-1'  
-         );  
-         $this->load->library('email', $config);  
-         $this->email->set_newline("\r\n");  
-         $this->email->from('admin@mediainformasipkn.id', 'Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+      $config = Array(  
+        'protocol' => 'smtp',  
+        'smtp_host' => 'mail.pipapip.web.id',  
+        'smtp_port' => 587,  
+        'smtp_user' => 'webmaster@pipapip.web.id',   
+        'smtp_pass' => 'mediapkn2019',   
+        'mailtype' => 'html', 
+        'charset' => 'iso-8859-1'
+        );  
+        $this->load->library('email', $config);  
+        $this->email->set_newline("\r\n");  
+        $this->email->from('webmaster@pipapip.web.id', 'Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
          $this->email->to('mediainformasipkn@gmail.com'); 
         if ($tahap == 2 ) {
           $notifikasi = "Anda telah memperbarui berkas pendaftaran ujian skripsi. Tunggu konfirmasi admin untuk pemberitahuan selanjutnya";
@@ -287,4 +333,25 @@ class SITA extends MY_Controller
         );
          $this->load->view('notifikasi',array_merge($data));       
     }   
+    public function test(){
+      //konfigurasi email
+      $config = Array(  
+        'protocol' => 'smtp',  
+        'smtp_host' => 'mail.pipapip.web.id',  
+        'smtp_port' => 587,  
+        'smtp_user' => 'webmaster@pipapip.web.id',   
+        'smtp_pass' => 'mediapkn2019',   
+        'mailtype' => 'html', 
+        'charset' => 'iso-8859-1'
+        );  
+        $this->load->library('email', $config);  
+        $this->email->set_newline("\r\n");  
+        $this->email->from('webmaster@pipapip.web.id', 'Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+        $this->email->to('afifnuruddinmaisaroh@gmail.com'); 
+        $this->email->subject('Pemberitahuan Mahasiswa Mendaftar Ujian | Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+        $this->email->message('Pemberitahuan Mahasiswa dengan nama telah mendaftar tugas akhir.<br> Judul Penelitian 
+        <br>Klik tautan berikut: </a>');
+        $this->email->send();
+       
+    }
 } 
