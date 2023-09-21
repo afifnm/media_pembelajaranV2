@@ -45,16 +45,19 @@ class Sita_model extends CI_Model{
       return $this->db->get()->row()->dosen;
    }
    public function emaildosen($id_dosen){
-      $this->db->select('email')->from('dosen');
-      $this->db->where("id_dosen", $id_dosen);
-      $hasil = $this->db->get()->row()->email;
-      if($hasil==NULL){
+      if($id_dosen==0){
          return 0;
       } else {
-         return $hasil;
+         $this->db->select('email')->from('dosen');
+         $this->db->where("id_dosen", $id_dosen);
+         $hasil = $this->db->get()->row()->email;
+         if($hasil==NULL){
+            return 0;
+         } else {
+            return $hasil;
+         }
       }
    }
-
     public function jenis_penelitian($id){
        $this->db->select('*');
        $this->db->like('jenis_penelitian',$id);

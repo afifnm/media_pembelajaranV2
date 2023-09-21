@@ -61,10 +61,18 @@ class CRUD_model extends CI_Model{
     }
 
     public function namadosen($id_dosen){
-        $this->db->select('nama as dosen');
-        $this->db->from('dosen');
-        $this->db->where("id_dosen", $id_dosen);
-        return $this->db->get()->row()->dosen;
+      if(($id_dosen==0) || ($id_dosen==NULL)){
+         return "-";
+      } else {
+         $this->db->from('dosen');
+         $this->db->where("id_dosen", $id_dosen);
+         $hasil = $this->db->get()->row();
+         if($hasil==NULL){
+            return "-";
+         } else {
+            return $hasil->nama;
+         }
+      }
     }
 
     public function jenis_penelitian($id){

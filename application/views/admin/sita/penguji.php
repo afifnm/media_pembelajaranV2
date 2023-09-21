@@ -59,6 +59,7 @@
             <label class="col-sm-2 control-label">Ketua Penguji</label>
             <div class="col-sm-5">
               <select class="form-control select2" name="penguji1" required>
+                <option value="0">Tidak Ada</option>
                 <?php foreach ($data3 as $user) {?>
               <option value="<?php echo $user['id_dosen'] ?>" <?php if($user['id_dosen']==$u->penguji1){echo"selected";}?>>
                 <?php echo $user['nama']; ?>
@@ -72,6 +73,7 @@
             <label class="col-sm-2 control-label">Sekretaris</label>
             <div class="col-sm-5">
               <select class="form-control select2" name="penguji2" required>
+              <option value="0">Tidak Ada</option>
                 <?php foreach ($data3 as $user) {?>
               <option value="<?php echo $user['id_dosen'] ?>" <?php if($user['id_dosen']==$u->penguji2){echo"selected";}?>>
                 <?php echo $user['nama']; ?>
@@ -85,6 +87,7 @@
             <label class="col-sm-2 control-label">Anggota Penguji 1</label>
             <div class="col-sm-5">
               <select class="form-control select2" name="penguji3" required>
+              <option value="0">Tidak Ada</option>
                 <?php foreach ($data3 as $user) {?>
               <option value="<?php echo $user['id_dosen'] ?>" <?php if($user['id_dosen']==$u->penguji3){echo"selected";}?>>
                 <?php echo $user['nama']; ?>
@@ -98,6 +101,7 @@
             <label class="col-sm-2 control-label">Anggota Penguji 2</label>
             <div class="col-sm-5">
               <select class="form-control select2" name="penguji4" required>
+              <option value="0">Tidak Ada</option>
                 <?php foreach ($data3 as $user) {?>
               <option value="<?php echo $user['id_dosen'] ?>" <?php if($user['id_dosen']==$u->penguji4){echo"selected";}?>>
                 <?php echo $user['nama']; ?>
@@ -143,7 +147,8 @@
         <div class="box-footer">
           <?php $no_hp = intval($u->no_hp);?>
           <a href="<?php echo site_url('admin/ujian');?>" class="btn btn-default">Cancel</a>
-          <a target="_blank" href="https://api.whatsapp.com/send?phone=+62<?=$no_hp;?>&text=Pemberitahuan Mahasiswa | Sistem Informasi Tugas Akhir (SITA) PPKn UNS"
+          <a target="_blank" href="https://api.whatsapp.com/send?phone=+62<?=$no_hp;?>&text=Pemberitahuan Mahasiswa | Sistem Informasi Tugas Akhir (SITA) PPKn UNS | 
+          Silahkan cek email yang digunakan saat pendaftaran judul"
           class="btn btn-success pull-right" style="margin-left:5px;">Whatsapp</a>
           <button type="submit" class="btn btn-success pull-right">Simpan</button>
         </div>

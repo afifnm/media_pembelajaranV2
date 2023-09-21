@@ -252,8 +252,38 @@ class SITA extends MY_Controller
         if($cek>0){
           $notifikasi = "Anda sudah melakukan pengisian pendataan judul di  SITA, hubungi Admin jika terjadi kesalahan pada data sebelumnya.";
         } else {
+          $email = $this->input->post('email');
           $this->db->insert('judul', $data2);
           $notifikasi = "Formulir pendaftaran tugas akhir berhasil dikirim. Terima Kasih";
+          //konfigurasi email
+          $config = Array(  
+            'protocol' => 'smtp',  
+            'smtp_host' => 'mail.pipapip.web.id',  
+            'smtp_port' => 587,  
+            'smtp_user' => 'webmaster@pipapip.web.id',   
+            'smtp_pass' => 'mediapkn2019',   
+            'mailtype' => 'html', 
+            'charset' => 'iso-8859-1'
+          );  
+          //email ke mahasiswa
+          $this->load->library('email', $config);  
+          $this->email->set_newline("\r\n");  
+          $this->email->from('webmaster@pipapip.web.id', 'Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+          $link = site_url("sita");
+          $this->email->to($email);
+          $this->email->subject('Pemberitahuan Pendaftaran Judul Skripsi | Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+          $this->email->message('Anda telah mendaftar judul di sistem informasi tugas akhir ( SITA) selengkapnya akses tautan berikut: <a href="'.$link.'" target="_blank"> '.$link.' </a> ');
+          $this->email->send();
+          //email ke admin SITA
+          $this->email->set_newline("\r\n");  
+          $this->email->from('webmaster@pipapip.web.id', 'Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+          $link = site_url("sita");
+          $this->email->to($site['email']);
+          $this->email->subject('Pemberitahuan Pendaftaran Judul Skripsi | Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+          $this->email->message('Atas nama '.$this->input->post('nama').' dengan NIM '.$this->input->post('nim').' 
+          dan dengan judul '.$this->input->post('judul'). ' telah mendaftar judul skripsi. Selengkapnya akses tautan berikut: <a href="'.$link.'" target="_blank"> '.$link.' </a> ');
+          $this->email->send();
+
         }
       } else {
           $notifikasi = "Waktu pendaftaran judul sudah berakhir. Silahkan menunggu hingga sistem dibuka kembali.";

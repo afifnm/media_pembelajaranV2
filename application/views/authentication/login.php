@@ -17,8 +17,8 @@
 			</div>
 			<div class="form-group has-feedback">
 				<select name="menu" class="form-control">
-					<option value="mediainfo">Media Informasi PKn</option>
-					<option value="sita">Sistem Informasi Tugas Akhir (SITA)</option>
+					<option value="mediainfo">Admin Media Informasi PKn</option>
+					<option value="sita">Admin Sistem Informasi Tugas Akhir (SITA)</option>
 				</select>
 				<span class="fa fa-cog form-control-feedback"></span>
 			</div>

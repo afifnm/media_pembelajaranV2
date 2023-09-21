@@ -59,7 +59,7 @@
                   <input type="text" name="password" placeholder="Password (Buatlah password anda dan ingat baik-baik, digunakan untuk mendaftar ujian.)" style="width: 700px;" required />
                 </div>
                 <div class="span8 margintop10 field form-group">
-                  <input type="text" name="no_hp" placeholder="Nomor Hp. yang bisa dihubungi" style="width: 300px;" required />
+                  <input type="text" name="no_hp" placeholder="Nomor whatsapp yang bisa dihubungi" style="width: 300px;" required />
                 </div>
                 <div class="span8 margintop10 field form-group">
                   <input type="email" name="email" placeholder="Email | Contoh mahasiswa@gmail.com (Digunakan untuk pemberitahuan ujian)" style="width: 700px;" required />

@@ -62,7 +62,7 @@
 										style="width: 500px;" required />
 								</div>
 								<div class="span8 margintop10 field form-group">
-									<a href="<?= site_url('sita/reset') ?>">Klik disini apabila lupa password...</a>
+									<a href="<?= site_url('sita/reset') ?>" class="btn btn-primary">Klik disini apabila lupa password</a>
 								</div>
 								<div class="span4 margintop10 field form-group"> Berkas-berkas ujian </div>
 								<div class="span8 margintop10 field form-group">

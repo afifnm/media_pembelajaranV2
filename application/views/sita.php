@@ -32,11 +32,11 @@
                   <div class="cta-text">
                     <h4>INFORMASI</h4>
                       <div class="box-body" style="padding-bottom: 0; padding-top: 0; font-size: 16px; font-weight: 500">
-                        Sistem Informasi Tugas Akhir (SITA) merupakan inovasi Laboratorium Program Studi PPKn FKIP UNS,dengan tujuan untuk pendataan,pengelolaan dan pemantauan skripsi guna meningkatkan Angka Efisiensi Edukasi (AEE).
-                        Untuk pusat bantuan silahkan join grup telegram <a href="https://t.me/+J7JVqux8c8g1Yzk1" target="_blank">Klik disini untuk bergabung</a>
+                        Sistem Informasi Tugas Akhir (SITA) merupakan inovasi Laboratorium Program Studi S1 PPKn FKIP UNS,dengan tujuan untuk pendataan,pengelolaan dan pemantauan skripsi guna meningkatkan Angka Efisiensi Edukasi (AEE).
+                        Untuk pusat bantuan silahkan join grup telegram <a href="https://t.me/+J7JVqux8c8g1Yzk1" target="_blank" class="btn btn-primary">Klik disini untuk bergabung</a>
                       </div>
-                      <a style="margin: 10px;" href="<?php echo base_url('assets/upload/file/FORM_PENGAJUAN_JUDUL_SKRIPSI_PPKN_2019.doc'); ?>" class="btn btn-inverse pull-right">Formulir Judul</a>
-                      <a style="margin: 10px;" href="<?php echo base_url('assets/upload/images/skema.jpg'); ?>" data-pretty="prettyPhoto[gallery1]" class="btn btn-inverse pull-right">Alur Tugas Akhir</a>
+                      <a style="margin: 10px;" href="<?php echo base_url('assets/upload/file/FORM_PENGAJUAN_JUDUL_SKRIPSI_PPKN_2023.doc'); ?>" class="btn btn-inverse pull-right">Formulir Judul</a>
+                      <a style="margin: 10px;" href="<?php echo base_url('assets/upload/images/skema2.jpg'); ?>" data-pretty="prettyPhoto[gallery1]" class="btn btn-inverse pull-right">Alur Tugas Akhir</a>
 
                   </div>
                 </div>
@@ -51,7 +51,7 @@
                 <h4>PENDAFTARAN JUDUL</h4>
               </div>
               <div class="action">
-                <a href="<?php echo site_url('sita/judul');?>" class="btn btn-inverse">&nbsp;&nbsp;&nbsp;Daftar&nbsp;&nbsp;&nbsp;</a>
+                <a href="<?php echo site_url('sita/judul');?>" class="btn btn-primary">&nbsp;&nbsp;&nbsp;Daftar&nbsp;&nbsp;&nbsp;</a>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
                 <h4>PENDAFTARAN UJIAN</h4>
               </div>
               <div class="action">
-                <a href="<?php echo site_url('sita/ujian');?>" class="btn btn-inverse">&nbsp;&nbsp;&nbsp;Daftar&nbsp;&nbsp;&nbsp;</a>
+                <a href="<?php echo site_url('sita/ujian');?>" class="btn btn-primary">&nbsp;&nbsp;&nbsp;Daftar&nbsp;&nbsp;&nbsp;</a>
               </div>
             </div>
           </div>
@@ -93,31 +93,31 @@
                     </tr>
                   </thead>  
                 <tbody>
-                <?php for ($i=0; $i <= 4; $i++){ ?>
+                <?php for ($i=0; $i <= 5; $i++){ ?>
                 <tr>
                   <td>
                     <span class="label label-info">
-                      <?php echo date("Y")-4+$i-2;  ?>
+                      <?php echo date("Y")-5+$i-2;  ?>
                     </span>
                   </td>
                   <td>
                     <span class="label label-info">
-                    <?php echo $jumlah=$this->CRUD_model->jumlahangkatan(6-$i);  ?>
+                    <?php echo $jumlah=$this->CRUD_model->jumlahangkatan(7-$i);  ?>
                     </span>
                   </td>
                   <td>
                     <span class="label label-primary">
-                      <?php echo $this->CRUD_model->daftarjudul(6-$i); ?>
+                      <?php echo $this->CRUD_model->daftarjudul(7-$i); ?>
                     </span>
                   </td>
                   <td>
                     <span class="label label-warning">
-                      <?php echo $this->CRUD_model->ujian(4,6-$i)+$this->CRUD_model->ujian(5,6-$i); ?>
+                      <?php echo $this->CRUD_model->ujian(4,7-$i)+$this->CRUD_model->ujian(5,7-$i); ?>
                     </span>
                   </td>
                   <td>
                   <span class="label label-success">
-                      <?php echo $sudah=$this->CRUD_model->ujian(6,6-$i);
+                      <?php echo $sudah=$this->CRUD_model->ujian(6,7-$i);
                       if(($jumlah==0) OR ($sudah==0)){
                         $persen = 0;
                       } else {
@@ -258,7 +258,7 @@
             <div class="heading">
                 <span>Rekapitulasi Pengujian dan Pembimbingan Program Studi PPKn FKIP UNS</span>
               </div>
-              <table class="table table-striped">
+              <table class="table table-striped datatab">
                   <thead>
                     <tr>
                       <th>No</th>
@@ -325,7 +325,9 @@ $persen5 = round($s5/$total , 4)*100;
 <script src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 <script>
 $(document).ready(function() {
-  $('.datatab').DataTable();
+  $('.datatab').DataTable({
+    pageLength : 5,
+  });
 } );
 </script>
 
