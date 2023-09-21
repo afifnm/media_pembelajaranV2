@@ -11,6 +11,7 @@ class Ujian extends MY_Controller
         $this->load->helper(array('form', 'url'));
         $this->load->helper('tgl_indo');
         $this->load->model('CRUD_model');
+        $this->load->model('Sita_model');
         if ($this->session->userdata('level') != "Admin") {
             redirect('', 'refresh');
         }
@@ -57,6 +58,13 @@ class Ujian extends MY_Controller
     }
 
     public function update(){
+        $this->db->from('judul');
+        $this->db->where('id',$this->input->post('id'));
+        $mhs = $this->db->get()->row();
+        $ketua_penguji = $this->Sita_model->emaildosen($mhs->penguji1);
+        $sekretaris = $this->Sita_model->emaildosen($mhs->penguji2);
+        $anggota1 = $this->Sita_model->emaildosen($mhs->penguji3);
+        $anggota2 = $this->Sita_model->emaildosen($mhs->penguji4);
         $count = $this->CRUD_model->no_register();
         $tahun = date('Y');
         if($count==0){
@@ -112,8 +120,41 @@ class Ujian extends MY_Controller
         $this->email->subject('Pemberitahuan Verifikasi Ujian Skripsi | Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
         $this->email->message('Pendaftaran ujian tugas akhir (skripsi) anda telah diverifikasi. Cek website untuk mengetahui  jadwal ujian dan tim penguji anda. Klik tautan berikut: <a href="'.$link.'" target="_blank"> '.$link.' </a> ');
         $this->email->send();
-
         $data = $this->CRUD_model->Update('judul', $data, $where);
+        //email ke ketua penguji
+        $this->email->set_newline("\r\n");  
+        $this->email->from('webmaster@pipapip.web.id', 'Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+        $this->email->to($ketua_penguji);
+        $this->email->subject('Pemberitahuan Verifikasi Ujian Skripsi | Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+        $this->email->message('Pendaftaran ujian tugas akhir (skripsi) anda telah dipilih sebagai Ketua Penguji.
+        Cek website untuk mengetahui  jadwal ujian dan tim penguji anda. Klik tautan berikut: <a href="'.$link.'" target="_blank"> '.$link.' </a> ');
+        $this->email->send();
+        //email ke sekretaris penguji
+        $this->email->set_newline("\r\n");  
+        $this->email->from('webmaster@pipapip.web.id', 'Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+        $this->email->to($sekretaris);
+        $this->email->subject('Pemberitahuan Verifikasi Ujian Skripsi | Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+        $this->email->message('Pendaftaran ujian tugas akhir (skripsi) anda telah dipilih sebagai Sekretaris Penguji.
+        Cek website untuk mengetahui  jadwal ujian dan tim penguji anda. Klik tautan berikut: <a href="'.$link.'" target="_blank"> '.$link.' </a> ');
+        $this->email->send();
+
+        //email ke anggota penguji 1
+        $this->email->set_newline("\r\n");  
+        $this->email->from('webmaster@pipapip.web.id', 'Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+        $this->email->to($anggota1);
+        $this->email->subject('Pemberitahuan Verifikasi Ujian Skripsi | Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+        $this->email->message('Pendaftaran ujian tugas akhir (skripsi) anda telah dipilih sebagai Anggota Penguji.
+        Cek website untuk mengetahui  jadwal ujian dan tim penguji anda. Klik tautan berikut: <a href="'.$link.'" target="_blank"> '.$link.' </a> ');
+        $this->email->send();
+        //email ke anggota penguji 2
+        $this->email->set_newline("\r\n");  
+        $this->email->from('webmaster@pipapip.web.id', 'Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+        $this->email->to($anggota2);
+        $this->email->subject('Pemberitahuan Verifikasi Ujian Skripsi | Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
+        $this->email->message('Pendaftaran ujian tugas akhir (skripsi) anda telah dipilih sebagai Anggota Penguji.
+        Cek website untuk mengetahui  jadwal ujian dan tim penguji anda. Klik tautan berikut: <a href="'.$link.'" target="_blank"> '.$link.' </a> ');
+        $this->email->send();
+        
         $this->session->set_flashdata('alert', '<p class="box-msg">
         <div class="info-box alert-success">
         <div class="info-box-icon">

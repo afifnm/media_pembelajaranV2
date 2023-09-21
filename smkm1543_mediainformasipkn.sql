@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 14 Sep 2023 pada 23.11
--- Versi server: 10.3.39-MariaDB-cll-lve
--- Versi PHP: 8.1.16
+-- Generation Time: Sep 21, 2023 at 08:21 AM
+-- Server version: 8.0.34-cll-lve
+-- PHP Version: 8.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,70 +18,71 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mediainf_pkn`
+-- Database: `smkm1543_mediainformasipkn`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `agenda`
+-- Table structure for table `agenda`
 --
 
 CREATE TABLE `agenda` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `agenda` text NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dosen`
+-- Table structure for table `dosen`
 --
 
 CREATE TABLE `dosen` (
-  `id_dosen` int(11) NOT NULL,
-  `nama` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `id_dosen` int NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `wa` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dosen`
+-- Dumping data for table `dosen`
 --
 
-INSERT INTO `dosen` (`id_dosen`, `nama`) VALUES
-(1, 'Dr. Winarno., S.Pd., M.Si'),
-(2, 'Wijianto., S.Pd., M.Sc'),
-(3, 'Dr. Muh. Hendri. Nuryadi., S.Pd., M.Sc'),
-(4, 'Dr. Machmud Al-Rasyid., S.H., M.Si'),
-(5, 'Dr. Moh. Muchtarom. S.Ag., M.SI'),
-(6, 'Erna Yuliandari., S.H ., M.A'),
-(7, 'Dr. Rini Triastuti., S.H., M.Hum'),
-(8, 'Dr. Sri Haryati., M.Pd'),
-(9, 'Dr. Rusnaini., M.Si'),
-(11, 'Dr. Hassan Suryono., S.H., M.H., M.Pd'),
-(12, 'Dr. Dewi Gunawati., S.H., M.Hum'),
-(13, 'Prof. Dr. Triyanto., S.H., M.Hum'),
-(14, 'Dr. Triana Rejekiningsih., S.H., K.N., M.Pd'),
-(15, 'Dr. Rima Vien Permata H., S.H., M.H'),
-(16, 'Yudi Ariana., S.H., M.H'),
-(18, 'Raharjo, S.Pd.,M.Sc.'),
-(19, 'Anis Suryaningsih, S.Pd., M.Sc'),
-(20, 'Widya Noventari, S.Pd.,M.Sc');
+INSERT INTO `dosen` (`id_dosen`, `nama`, `wa`, `email`) VALUES
+(1, 'Dr. Winarno., S.Pd., M.Si.', '085640414449', 'winarnonarmoatmojo@staff.uns.ac.id'),
+(2, 'Wijianto., S.Pd., M.Sc.', '0816675377', 'wijianto@staff.uns.ac.id'),
+(3, 'Dr. Muh. Hendri. Nuryadi., S.Pd., M.Sc.', '081312125285', 'hendri@staff.uns.ac.id'),
+(4, 'Dr. Machmud Al-Rasyid., S.H., M.Si.', '08164226555', 'machmudalrasyid@staff.uns.ac.id'),
+(5, 'Dr. Moh. Muchtarom. S.Ag., M.SI.', '081328765606', 'muhtarom1974@staff.uns.ac.id'),
+(6, 'Erna Yuliandari., S.H ., M.A.', '081329494731', 'ernayuliandari@staff.uns.ac.id'),
+(7, 'Dr. Rini Triastuti., S.H., M.Hum.', '081392343449', 'rinitriastuti@staff.uns.ac.id'),
+(9, 'Dr. Rusnaini., M.Si.', '08156873638', 'rusnaini@staff.uns.ac.id'),
+(11, 'Dr. Hassan Suryono., S.H., M.H., M.Pd.', '081329014097', 'hassansuryono@staff.uns.ac.id'),
+(12, 'Dr. Dewi Gunawati., S.H., M.Hum.', '081331590907', 'dewigunawati@staff.uns.ac.id'),
+(13, 'Prof. Dr. Triyanto., S.H., M.Hum.', '08121501029', 'try@staff.uns.ac.id'),
+(14, 'Dr. Triana Rejekiningsih., S.H., K.N., M.Pd.', '082135858999', 'triana_rizq@staff.uns.ac.id'),
+(15, 'Dr. Rima Vien Permata H., S.H., M.H', '081329468276', 'rimavien@staff.uns.ac.id'),
+(16, 'Yudi Ariana., S.H., M.H.', '081906306004', 'ariana@staff.uns.ac.id'),
+(18, 'Raharjo, S.Pd.,M.Sc.', '081914133246', 'raharjoppkn@staff.uns.ac.id'),
+(19, 'Anis Suryaningsih, S.Pd., M.Sc.', '081804406320', 'anissuryaningsih@staff.uns.ac.id'),
+(20, 'Widya Noventari, S.Pd., M.Sc.', '081252047458', 'widyanoventari@staff.uns.ac.id');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `file`
+-- Table structure for table `file`
 --
 
 CREATE TABLE `file` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nama` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `file`
+-- Dumping data for table `file`
 --
 
 INSERT INTO `file` (`id`, `nama`, `created_at`) VALUES
@@ -91,21 +92,21 @@ INSERT INTO `file` (`id`, `nama`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `informasi`
+-- Table structure for table `informasi`
 --
 
 CREATE TABLE `informasi` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `judul` varchar(100) NOT NULL,
   `isi` text NOT NULL,
   `tanggal` date NOT NULL,
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `foto` varchar(50) NOT NULL,
   `id_kategori` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `informasi`
+-- Dumping data for table `informasi`
 --
 
 INSERT INTO `informasi` (`id`, `judul`, `isi`, `tanggal`, `updated_at`, `foto`, `id_kategori`) VALUES
@@ -218,11 +219,11 @@ INSERT INTO `informasi` (`id`, `judul`, `isi`, `tanggal`, `updated_at`, `foto`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `judul`
+-- Table structure for table `judul`
 --
 
 CREATE TABLE `judul` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `no_ujian` varchar(100) DEFAULT NULL,
   `nama` varchar(100) NOT NULL,
   `nim` varchar(100) NOT NULL,
@@ -238,20 +239,20 @@ CREATE TABLE `judul` (
   `judul2` text NOT NULL,
   `file1` varchar(255) NOT NULL,
   `file2` varchar(255) NOT NULL,
-  `tahap` int(11) NOT NULL,
-  `penguji1` int(11) NOT NULL,
-  `penguji2` int(11) NOT NULL,
-  `penguji3` int(11) NOT NULL,
-  `penguji4` int(11) NOT NULL,
+  `tahap` int NOT NULL,
+  `penguji1` int NOT NULL,
+  `penguji2` int NOT NULL,
+  `penguji3` int NOT NULL,
+  `penguji4` int NOT NULL,
   `tanggal_ujian` date NOT NULL,
   `jam1` time NOT NULL,
   `jam2` time NOT NULL,
   `ruang` varchar(100) NOT NULL,
   `catatan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `judul`
+-- Dumping data for table `judul`
 --
 
 INSERT INTO `judul` (`id`, `no_ujian`, `nama`, `nim`, `password`, `no_hp`, `email`, `dosen1`, `dosen2`, `tanggal_judul`, `tanggal_daftar`, `jenis_penelitian`, `judul`, `judul2`, `file1`, `file2`, `tahap`, `penguji1`, `penguji2`, `penguji3`, `penguji4`, `tanggal_ujian`, `jam1`, `jam2`, `ruang`, `catatan`) VALUES
@@ -557,27 +558,30 @@ INSERT INTO `judul` (`id`, `no_ujian`, `nama`, `nim`, `password`, `no_hp`, `emai
 (404, '2023.069', 'Vinanda Irawati', 'K6416064', 'Muslimah7', '0882007573090', 'vinandairawati@gmail.com', '3', '12', '2023-08-02', '2023-08-02', 'Kualitatif', 'STRATEGI PEMERINTAH DAERAH DALAM MENGATASI PROSTITUSI MELALUI PROGRAM THE NEW KEMUKUS (STUDI DI OBJEK WISATA GUNUNG KEMUKUS DESA PENDEM KECAMATAN SUMBERLAWANG KABUPATEN SRAGEN)', 'LOCAL GOVERNMENT STRATEGY IN OVERCOMING PROSTITUTION THROUGH THE NEW KEMUKUS PROGRAM (STUDY IN MOUNT KEMUKUS TOURISM OBJECTS PENDEM VILLAGE, SUMBERLAGANG DISTRICT, SRAGEN REGENCY)', 'drive.google.com/drive/folders/1IVgkmI5-mg3aGyGTZJBIwtKP0NfPSzYS', 'drive.google.com/drive/folders/1IzFR-LGJN2Aom4-d4OI-gEc9e0fM1nGB', 6, 7, 18, 3, 12, '2023-07-31', '10:00:00', '12:00:00', 'Ruang Podcast Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
 (405, '0', 'Mochamad naufal hasib', 'K6420046', 'yulia304', '085601654570', 'naufalhasib@student.uns.ac.id', '2', '1', '2023-08-21', '0000-00-00', 'Research dan Development', 'Pengembangan Bahan Ajar Pendidikan Pancasila Berbasis Komik (Studi Pada Fase F SMA Batik 2 Surakarta)', 'Development of Comic-Based Pancasila Educational Teaching Materials (Study in Phase F of SMA Batik 2 Surakarta)', 'drive.google.com/drive/folders/1QlsfC_-CIW_lm_lxTBY9j0cTCeMT_Crb?usp=sharing', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
 (406, '0', 'NADILA RISTA SARASASTI', 'K6420050', 'ahmadsodirun13', '0895423611155', 'nadilarista13@student.uns.ac.id', '6', '5', '2023-08-27', '0000-00-00', 'Kualitatif', 'Penguatan Civic Responsibility Melalui Unit Kegiatan Mahasiswa  Pramuka (Studi Pada Anggota Pramuka Universitas Sebelas Maret)', 'Strengthening Civic Responsibility Through Student Scout Activity Units (Study of Scout Members at Sebelas Maret University)', 'https://drive.google.com/drive/folders/1HLPLMgQTIrgW_8LB9OQCXxuZNxdYR4Xk?usp=sharing', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
-(407, '0', 'Rifki Zhulfian Najid', 'K6419060', 'tempertrap', '085702203880', 'rzhulfian16@student.uns.ac.id', '11', '2', '2023-09-13', '0000-00-00', 'Kualitatif', 'Strategi Guru Pendidikan Pancasila Dalam Penguatan Sikap Kewarganegaraan Peserta Didik di Sekolah Penggerak. (Studi di SMA Al-Islam 1 Surakarta)', 'Pancasila Education Teacher Strategy in Strengthening Students\' Cityzenship Attitudes in Driving Schools. (Study at SMA Al-Islam 1 Surakarta)', 'drive.google.com/folderview?id=1DAWuXx1sr2gvtkR9YVKOiBZO38brvDU9', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
+(407, '2023.073', 'Rifki Zhulfian Najid', 'K6419060', 'tempertrap', '085702203880', 'rzhulfian16@student.uns.ac.id', '11', '2', '2023-09-13', '2023-09-15', 'Kualitatif', 'Strategi Guru Pendidikan Pancasila Dalam Penguatan Sikap Kewarganegaraan Peserta Didik di Sekolah Penggerak. (Studi di SMA Al-Islam 1 Surakarta)', 'Pancasila Education Teacher Strategy in Strengthening Students\' Cityzenship Attitudes in Driving Schools. (Study at SMA Al-Islam 1 Surakarta)', 'drive.google.com/folderview?id=1DAWuXx1sr2gvtkR9YVKOiBZO38brvDU9', 'drive.google.com/folderview?id=1WWXrzZpsqlbLmbXP4AhoCOEhphDAiEuR', 6, 1, 19, 11, 2, '2023-09-21', '11:00:00', '13:00:00', 'Ruang Podcast Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
 (408, '0', 'Lukluk Indah Nurjanah', 'K6419039', 'luklukana2121', '089613101999', 'luklukindah1310@student.uns.ac.id', '12', '5', '2023-09-13', '0000-00-00', 'Kualitatif', 'Pembentukan Kesadaran Peduli Lingkungan Melalui Program Jumat Bebas Emisi (JBEm) di Universitas Sebelas Maret ', 'Formation of Environmental Awareness through the Friday Emission Free Program (JBEm) at Sebelas Maret University ', 'https://drive.google.com/file/d/18G3y8DWe_QTulqiigh_wpABvsowcNFyK/view?usp=sharing', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
-(409, '0', 'Deta Nur Aryana', 'K6419019', 'detanur1012', '085747771668', 'detanuraryana@student.uns.ac.id', '2', '20', '2023-09-13', '0000-00-00', 'Research dan Development', 'Inovasi Modul Ajar Pembelajaran Pendidikan Pancasila Kelas X Berorientasi TPACK (Technological Pedagogical Content Knowledge) di SMA Negeri 1 Banyudono', 'INNOVATION IN TEACHING MODULES FOR PANCASILA EDUCATION IN GRADE X WITH A FOCUS ON TECHNOLOGICAL PEDAGOGICAL CONTENT KNOWLEDGE AT SMA NEGERI 1 BANYUDONO', 'drive.google.com/drive/folders/1tUXk0gkf4p17lu2yipusB40xMrN7NJJT?usp=drive_link', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-');
+(409, '2023.074', 'Deta Nur Aryana', 'K6419019', 'detanur1012', '085747771668', 'detanuraryana@student.uns.ac.id', '2', '20', '2023-09-13', '2023-09-19', 'Research dan Development', 'Inovasi Modul Ajar Pembelajaran Pendidikan Pancasila Kelas X Berorientasi TPACK (Technological Pedagogical Content Knowledge) di SMA Negeri 1 Banyudono', 'INNOVATION IN TEACHING MODULES FOR PANCASILA EDUCATION IN GRADE X WITH A FOCUS ON TECHNOLOGICAL PEDAGOGICAL CONTENT KNOWLEDGE AT SMA NEGERI 1 BANYUDONO', 'drive.google.com/drive/folders/1tUXk0gkf4p17lu2yipusB40xMrN7NJJT?usp=drive_link', 'drive.google.com/drive/folders/13j0ueGO2LQW5WUq1mo0dvM-DIR7ndGyc', 5, 7, 19, 2, 20, '2023-09-27', '10:00:00', '12:00:00', 'Ruang Podcast Lab PPKn Gd C Lt 2', 'Konsul pak wijianto via chat wa, abaikan tanggal sistem'),
+(410, '0', 'Amalia Khasanah', 'K6421007', 'ansaptra04', '6289602628156', 'andikasatriaaa13@student.uns.ac.id', '2', '20', '2023-09-15', '2023-09-15', 'Research dan Development', 'Pengembangan Instrumen Penilaian Kognitif Fase E Kurikulum Merdeka dengan Media Aplikasi  Pada Mata Pelajaran PPKN Kelas X-E di SMA Negeri 6 Surakarta', 'Development of Cognitive Assessment Instruments for Phase E of the Merdeka Curriculum using Application Media in PPKN Class X-E Subjects at SMA Negeri 6 Surakarta', 'https://drive.google.com/file/d/1erE-WfXrOIUzN3_jfuLQdONMMjBeoF-6/view?usp=sharing', 'drive.google.com/file/d/1erE-WfXrOIUzN3_jfuLQdONMMjBeoF-6/view?usp=sharing', 4, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
+(411, '0', 'Amin', 'K6421002', '1234', '081', 'maswidsolo2@gmail.com', '15', '0', '2023-09-16', '2023-09-16', 'Kualitatif', 'Judul Skripsi Baru : Membangun Kesadaran Lingkungan Warga melalui Pendidikan Kewarganegaraan Kemasyarakatan (Studi Kasus di Dusun Jumok, Desa Jaten, Kecamatan Jaten)', 'Pancasila Education Teacher Strategy in Strengthening Students\' Citizenship Attitudes in Driving Schools (Study at SMA Al-Islam 1 Surakarta)', 'drive.google.com/file/d/1F9K3xyMORzWytd_-Cz9_ytz3wheeCSoX/view?usp=sharing', 'drive.google.com/drive/folders/1r0AhXuOwCSuhumx6MYBvpDe2m9IvzLOO?usp=drive_link', 2, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-'),
+(412, '0', 'Faj\'ri Alfi Syahrin', 'K6419026', 'fajri5353', '082233570914', 'fajrialfi53@gmail.com', '12', '1', '2023-09-18', '0000-00-00', 'Kualitatif', 'Respons Generasi Z terhadap Fenomena Golput pada Pemilu 2024 di SMA Negeri Surakarta', 'Generation Z\'s Response to the Abstention Phenomenon in the 2024 Election at SMA Negeri 6 Surakarta', 'drive.google.com/drive/folders/1HwT21OYcmfR_o1PNWA4MFHEujaChDmpC?usp=sharing', '', 1, 0, 0, 0, 0, '0000-00-00', '00:00:00', '00:00:00', '', '-');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
-  `id_kategori` int(11) NOT NULL,
+  `id_kategori` int NOT NULL,
   `kategori` varchar(50) NOT NULL,
-  `urutan` int(11) NOT NULL,
-  `id_main` int(11) NOT NULL,
-  `main` int(11) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `urutan` int NOT NULL,
+  `id_main` int NOT NULL,
+  `main` int NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `kategori`, `urutan`, `id_main`, `main`, `created_at`) VALUES
@@ -613,11 +617,11 @@ INSERT INTO `kategori` (`id_kategori`, `kategori`, `urutan`, `id_main`, `main`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `konfigurasi`
+-- Table structure for table `konfigurasi`
 --
 
 CREATE TABLE `konfigurasi` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nama_website` varchar(50) NOT NULL,
   `favicon` varchar(50) NOT NULL,
   `logo` varchar(50) NOT NULL,
@@ -626,32 +630,32 @@ CREATE TABLE `konfigurasi` (
   `welcome` varchar(200) NOT NULL,
   `tanggal_awal` date NOT NULL,
   `tanggal_akhir` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `konfigurasi`
+-- Dumping data for table `konfigurasi`
 --
 
 INSERT INTO `konfigurasi` (`id`, `nama_website`, `favicon`, `logo`, `judul_profil`, `deskripsi`, `welcome`, `tanggal_awal`, `tanggal_akhir`) VALUES
-(1, 'Media Pembelajaran dan Informasi', 'fav.ico', 'logo.png', 'Profil  Website Media Pembelajaran dan Informasi Pendidikan Kewarganegaraan', '<p style=\"text-align: justify;\">Media Pembelajaran dan Informasi Pendidikan Kewarganegaraan merupakan media bagi guru, dosen, pelajar, mahasiswa, serta khalayak umum pemerhati Pendidikan Kewarganegaraan. Berisi konten :</p>\r\n<ol>\r\n<li>Pendidikan dan Pengajaran</li>\r\n<li>Penelitian dan Pengabdian Kepada Masyarakat</li>\r\n<li>Publikasi Ilmiah (Jurnal, Proseding,Media Masa)</li>\r\n<li>Model dan Inovasi</li>\r\n<li>Buku / Modul</li>\r\n<li>Warta Civic</li>\r\n<li>Karya Pelajar dan Mahasiswa</li>\r\n<li>Kerjasama</li>\r\n<li>Inspirasi</li>\r\n<li>Layanan online</li>\r\n</ol>\r\n<p>dan lainnya, dalam menu beranda.</p>\r\n<p>Tim Pengembang:</p>\r\n<p>Pemimpin: Wijianto, S.Pd., M.Sc</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Dr. Rini Triastuti, S.H., M.Hum</p>\r\n<p>Anggota:&nbsp;</p>\r\n<ol>\r\n<li>Raharjo, S.Pd, M.Sc</li>\r\n<li>Danang Prasetyo Hartono</li>\r\n<li>Anggi Yoga Pramanda, S.Pd</li>\r\n<li>Friskal Oktiansyah</li>\r\n<li>Afif Nuruddin Maisaroh (Web Design)</li>\r\n<li>Eka</li>\r\n<li>Riky</li>\r\n<li>Fajar</li>\r\n</ol>\r\n<p>Kontributor:</p>\r\n<ol>\r\n<li>Endang Wulandari, S.Pd</li>\r\n<li>Sri Rahayu, S.Pd</li>\r\n<li>Wulandari</li>\r\n</ol>\r\n<p>Anda dapat berkontribusi dengan mengirimkan konten <a title=\"kontribusi\" href=\"https://goo.gl/forms/tIGKIrbKwzpTtUdB3\">DISINI</a>. Konten terseleksi akan dipublish.</p>\r\n<p>Kontak Kami Melalui Email : mediainformasipkn@gmail.com&nbsp;</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IG&nbsp; &nbsp; &nbsp;: @mediainformasipkn</p>\r\n<p>Kritik dan saran membangun silahkan klik menu navigasi Kritik dan Saran pada Beranda.</p>\r\n<p>Salam, Terima Kasih.</p>', 'Layanan Laboratorium PPKn dilakukan secara daring dan luring sesuai situasi dan kondisi. Laboratorium di Gd C Lt 2, ruang baca di basement Gd C', '2022-01-01', '2025-12-31');
+(1, 'Media Pembelajaran dan Informasi', 'fav.ico', 'logo.png', 'Profil  Website Media Pembelajaran dan Informasi Pendidikan Kewarganegaraan', '<p style=\"text-align: justify;\">Media Pembelajaran dan Informasi Pendidikan Kewarganegaraan merupakan media bagi guru, dosen, pelajar, mahasiswa, serta khalayak umum pemerhati Pendidikan Kewarganegaraan. Berisi konten :</p>\r\n<ol>\r\n<li>Pendidikan dan Pengajaran</li>\r\n<li>Penelitian dan Pengabdian Kepada Masyarakat</li>\r\n<li>Publikasi Ilmiah (Jurnal, Proseding,Media Masa)</li>\r\n<li>Model dan Inovasi</li>\r\n<li>Buku / Modul</li>\r\n<li>Warta Civic</li>\r\n<li>Karya Pelajar dan Mahasiswa</li>\r\n<li>Kerjasama</li>\r\n<li>Inspirasi</li>\r\n<li>Layanan online</li>\r\n</ol>\r\n<p>dan lainnya, dalam menu beranda.</p>\r\n<p>Tim Pengembang:</p>\r\n<p>Pemimpin: Wijianto, S.Pd., M.Sc</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Dr. Rini Triastuti, S.H., M.Hum</p>\r\n<p>Anggota:&nbsp;</p>\r\n<ol>\r\n<li>Raharjo, S.Pd, M.Sc</li>\r\n<li>Danang Prasetyo Hartono</li>\r\n<li>Anggi Yoga Pramanda, S.Pd</li>\r\n<li>Friskal Oktiansyah</li>\r\n<li>Afif Nuruddin Maisaroh (Web Design)</li>\r\n<li>Eka</li>\r\n<li>Riky</li>\r\n<li>Fajar</li>\r\n</ol>\r\n<p>Kontributor:</p>\r\n<ol>\r\n<li>Endang Wulandari, S.Pd</li>\r\n<li>Sri Rahayu, S.Pd</li>\r\n<li>Wulandari</li>\r\n</ol>\r\n<p>Anda dapat berkontribusi dengan mengirimkan konten <a title=\"kontribusi\" href=\"https://goo.gl/forms/tIGKIrbKwzpTtUdB3\">DISINI</a>. Konten terseleksi akan dipublish.</p>\r\n<p>Kontak Kami Melalui Email : mediainformasipkn@gmail.com&nbsp;</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IG&nbsp; &nbsp; &nbsp;: @mediainformasipkn</p>\r\n<p>Kritik dan saran membangun silahkan klik menu navigasi Kritik dan Saran pada Beranda.</p>\r\n<p>Salam, Terima Kasih.</p>', 'Terimakasih atas kunjungan anda', '2022-01-01', '2025-12-31');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kritikdansaran`
+-- Table structure for table `kritikdansaran`
 --
 
 CREATE TABLE `kritikdansaran` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nama` varchar(70) NOT NULL,
   `email` varchar(70) NOT NULL,
   `no_hp` varchar(20) NOT NULL,
   `isi` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kritikdansaran`
+-- Dumping data for table `kritikdansaran`
 --
 
 INSERT INTO `kritikdansaran` (`id`, `nama`, `email`, `no_hp`, `isi`, `created_at`) VALUES
@@ -660,19 +664,19 @@ INSERT INTO `kritikdansaran` (`id`, `nama`, `email`, `no_hp`, `isi`, `created_at
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `link`
+-- Table structure for table `link`
 --
 
 CREATE TABLE `link` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `judul` varchar(50) NOT NULL,
   `link` varchar(50) NOT NULL,
   `lokasi` varchar(50) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `link`
+-- Dumping data for table `link`
 --
 
 INSERT INTO `link` (`id`, `judul`, `link`, `lokasi`, `created_at`) VALUES
@@ -685,17 +689,17 @@ INSERT INTO `link` (`id`, `judul`, `link`, `lokasi`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mahasiswa`
+-- Table structure for table `mahasiswa`
 --
 
 CREATE TABLE `mahasiswa` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nim` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mahasiswa`
+-- Dumping data for table `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`id`, `nim`, `nama`) VALUES
@@ -1257,23 +1261,93 @@ INSERT INTO `mahasiswa` (`id`, `nim`, `nama`) VALUES
 (576, 'K6420080', 'YESINTA'),
 (577, 'K6420082', 'YULIANA PUTRI ASIH'),
 (578, 'K6420083', 'ZAHRO SEPTA KHOIRISSA'),
-(579, 'K6420084', 'ZUMROTUL MUADZIMAH');
+(579, 'K6420084', 'ZUMROTUL MUADZIMAH'),
+(580, 'K6421001', 'ADITYA DHANIEL WICAKSANA'),
+(581, ' K6421002 ', 'AFIFAH HANAN MAIMUNAH '),
+(582, ' K6421003', 'AHMAD BACHTIAR IHSANUDDIN '),
+(583, 'K6421004', 'ALDI TRI CAHYO NUGROHO '),
+(584, 'K6421005', 'ALFA ASHARI MALINDA'),
+(585, 'K6421006', 'ALIFIA FITRIANA '),
+(586, 'K6421007', 'Amalia Khasanah'),
+(587, 'K6421008', 'AMANDA TAMIA RAMADENTI'),
+(588, 'K6421009', 'ANGGELA SABRINA'),
+(589, 'K6421010', 'ANGGI AYU NURJANAH '),
+(590, 'K6421011', 'ANISA NAILA SA\'ADAH'),
+(591, 'K6421012', 'ANNISA DEWI SAKUNTALA '),
+(592, 'K6421013', 'ARIFKA MAHARANI '),
+(593, 'K6421014', 'ASYIVA RIZKI SCHUMI '),
+(594, 'K6421015', 'AUDRI SEPTIYANA PUTRI '),
+(595, ' K6421016', 'AULIVE DIANDRA CAHAYU'),
+(596, 'K6421017', 'Balgis Dwi Agustina '),
+(597, 'K6421018', 'BARIKNA FACHRUL ILHAM '),
+(598, 'K6421019', 'BIANDRA ELIANA PUSPA '),
+(599, 'K6421020', 'BIRGITTA JEKLIN MULYO DYAH KUSUMA'),
+(600, 'K6421021', 'BRENDA MERRYTA PUTRI'),
+(601, 'K6421022', 'Cindy Adistya Lestari'),
+(602, 'K6421023', 'CORNELIUS BRILIAN BONI NUGRAHA'),
+(603, 'K6421024', 'DEA SANASYA RAMADHANI'),
+(604, 'K6421025', 'DHANIF PUTRA VIRGIANSYAH'),
+(605, 'K6421026', 'DHIKA DWI MAHARANI'),
+(606, 'K6421027', 'DHIYA SHAFA SALSABILA'),
+(607, 'K6421028', 'DIAN ALIYA PITALOKA'),
+(608, 'K6421029', 'Dwi Pramono'),
+(609, 'K6421030', 'Dyah Ajeng Pangesti Ayu Pamungkas'),
+(610, 'K6421031', 'EKA RIZKI UTAMI'),
+(611, 'K6421032', 'FELISITAS MARETA SUWARNO'),
+(612, 'K6421033', 'FRIEDA HELENNA'),
+(613, 'K6421034', 'HASNA NAUFI ALIMAH'),
+(614, 'K6421035', 'Ignatius Parlindungan'),
+(615, 'K6421036', 'JIHAN FATIHAH'),
+(617, 'K6421038', 'KAMALUDDIN MIQDAD'),
+(618, 'K6421037', 'JOREND ZELIG SATRIA NUGROHO'),
+(619, 'K6421039', 'KARIN DIVYA PUTRI'),
+(620, 'K6421041', 'KEN CITA MUNDY BIDARI'),
+(621, 'K6421042', 'KHOYIMAH FITRI FATHIA'),
+(622, 'K6421044', 'KRISTINA UTARI  MORHANISA WIBOWO'),
+(623, 'K6421045', 'LUQMAN WIJAYANTO'),
+(624, 'K6421046', 'MAETHA HENDRA ARDILA'),
+(625, 'K6421047', 'MAULIDA SALSA FI ARMADINA'),
+(626, 'K6421048', 'MELINE SETYAPATRA'),
+(627, 'K6421049', 'MUHAMMAD DANANG MARWANTO'),
+(628, 'K6421050', 'Muhammad Fadilah Salim'),
+(629, 'K6421051', 'NENSI DESTALIA DEWANTI'),
+(630, 'K6421052', 'Nova Reonald Andika'),
+(631, 'K6421053', 'NOVIA NUR AZIZAH DWI SAPUTRI'),
+(632, 'K6421054', 'NOVIYATI PUJI RAMADHANI'),
+(633, 'K6421055', 'PETRISCIA KUSUMA WARDANI'),
+(634, 'K6421056', 'PUTHI SABEKTI'),
+(635, 'K6421057', 'RAFI NURWAHID'),
+(636, 'K6421058', 'Rebeca Dwi Permatasari'),
+(637, 'K6421059', 'REHAN ADITYA SAPUTRA'),
+(638, 'K6421060', 'REIKE DIAH PITALOKA'),
+(639, 'K6421061', 'RENNY INDAH SETEFANI'),
+(640, 'K6421062', 'RIDHA AZIZAH HIDAYATI'),
+(641, 'K6421063', 'Rizka Dyah Kusumastuti'),
+(642, 'K6421064', 'SALMA SITI AISYAH'),
+(643, 'K6421065', 'Salsabila Fitriana Widyastuti'),
+(644, 'K6421067', 'SELVY PRADAWATI'),
+(645, 'K6421068', 'Sirat Pramono'),
+(646, 'K6421069', 'TESALONIKA AMANDA YUNIASARI'),
+(647, 'K6421070', 'WINDA WIDYASTUTI'),
+(649, 'K6421071', 'YOGIE ADI SAPUTRO'),
+(650, 'K6421072', 'YULIA NUR FARIDA'),
+(651, 'K6421073', 'DEWI NOVITA SARI');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `main_sub`
+-- Table structure for table `main_sub`
 --
 
 CREATE TABLE `main_sub` (
-  `id_main` int(11) NOT NULL,
+  `id_main` int NOT NULL,
   `main_sub` varchar(30) NOT NULL,
-  `urutan` int(11) NOT NULL,
-  `jenis` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `urutan` int NOT NULL,
+  `jenis` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `main_sub`
+-- Dumping data for table `main_sub`
 --
 
 INSERT INTO `main_sub` (`id_main`, `main_sub`, `urutan`, `jenis`) VALUES
@@ -1287,24 +1361,24 @@ INSERT INTO `main_sub` (`id_main`, `main_sub`, `urutan`, `jenis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sarana`
+-- Table structure for table `sarana`
 --
 
 CREATE TABLE `sarana` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `judul` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `username` varchar(60) NOT NULL,
   `password` varchar(255) NOT NULL,
   `nama` varchar(70) NOT NULL,
@@ -1314,17 +1388,17 @@ CREATE TABLE `user` (
   `alamat` text NOT NULL,
   `email` varchar(50) NOT NULL,
   `foto` varchar(100) NOT NULL,
-  `active` int(11) NOT NULL,
-  `last_login` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `active` int NOT NULL,
+  `last_login` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `ig` varchar(50) NOT NULL,
   `youtube` varchar(50) NOT NULL,
   `fb` varchar(50) NOT NULL,
   `wa` varchar(50) NOT NULL,
   `tw` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `nama`, `level`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `email`, `foto`, `active`, `last_login`, `ig`, `youtube`, `fb`, `wa`, `tw`) VALUES
@@ -1335,164 +1409,164 @@ INSERT INTO `user` (`id`, `username`, `password`, `nama`, `level`, `tempat_lahir
 --
 
 --
--- Indeks untuk tabel `agenda`
+-- Indexes for table `agenda`
 --
 ALTER TABLE `agenda`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `dosen`
+-- Indexes for table `dosen`
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`id_dosen`);
 
 --
--- Indeks untuk tabel `file`
+-- Indexes for table `file`
 --
 ALTER TABLE `file`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `informasi`
+-- Indexes for table `informasi`
 --
 ALTER TABLE `informasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `judul`
+-- Indexes for table `judul`
 --
 ALTER TABLE `judul`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `konfigurasi`
+-- Indexes for table `konfigurasi`
 --
 ALTER TABLE `konfigurasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `kritikdansaran`
+-- Indexes for table `kritikdansaran`
 --
 ALTER TABLE `kritikdansaran`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `link`
+-- Indexes for table `link`
 --
 ALTER TABLE `link`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `mahasiswa`
+-- Indexes for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `main_sub`
+-- Indexes for table `main_sub`
 --
 ALTER TABLE `main_sub`
   ADD PRIMARY KEY (`id_main`);
 
 --
--- Indeks untuk tabel `sarana`
+-- Indexes for table `sarana`
 --
 ALTER TABLE `sarana`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `agenda`
+-- AUTO_INCREMENT for table `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `dosen`
+-- AUTO_INCREMENT for table `dosen`
 --
 ALTER TABLE `dosen`
-  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_dosen` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT untuk tabel `file`
+-- AUTO_INCREMENT for table `file`
 --
 ALTER TABLE `file`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `informasi`
+-- AUTO_INCREMENT for table `informasi`
 --
 ALTER TABLE `informasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=208;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=208;
 
 --
--- AUTO_INCREMENT untuk tabel `judul`
+-- AUTO_INCREMENT for table `judul`
 --
 ALTER TABLE `judul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=410;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=413;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id_kategori` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- AUTO_INCREMENT untuk tabel `konfigurasi`
+-- AUTO_INCREMENT for table `konfigurasi`
 --
 ALTER TABLE `konfigurasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `kritikdansaran`
+-- AUTO_INCREMENT for table `kritikdansaran`
 --
 ALTER TABLE `kritikdansaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `link`
+-- AUTO_INCREMENT for table `link`
 --
 ALTER TABLE `link`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `mahasiswa`
+-- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=580;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=652;
 
 --
--- AUTO_INCREMENT untuk tabel `main_sub`
+-- AUTO_INCREMENT for table `main_sub`
 --
 ALTER TABLE `main_sub`
-  MODIFY `id_main` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_main` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `sarana`
+-- AUTO_INCREMENT for table `sarana`
 --
 ALTER TABLE `sarana`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

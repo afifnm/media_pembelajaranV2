@@ -39,11 +39,21 @@ class Sita_model extends CI_Model{
     }
 
     public function namadosen($id_dosen){
-        $this->db->select('nama as dosen');
-        $this->db->from('dosen');
-        $this->db->where("id_dosen", $id_dosen);
-        return $this->db->get()->row()->dosen;
-    }
+      $this->db->select('nama as dosen');
+      $this->db->from('dosen');
+      $this->db->where("id_dosen", $id_dosen);
+      return $this->db->get()->row()->dosen;
+   }
+   public function emaildosen($id_dosen){
+      $this->db->select('email')->from('dosen');
+      $this->db->where("id_dosen", $id_dosen);
+      $hasil = $this->db->get()->row()->email;
+      if($hasil==NULL){
+         return 0;
+      } else {
+         return $hasil;
+      }
+   }
 
     public function jenis_penelitian($id){
        $this->db->select('*');
