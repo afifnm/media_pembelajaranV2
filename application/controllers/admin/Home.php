@@ -23,7 +23,30 @@ class Home extends MY_Controller
             'favicon'               => $site['favicon'],
             'site'                  => $site,
         );
-        $this->template->load('layout/template', 'admin/dashboard', array_merge($data));
+        $this->db->select('*');
+        $this->db->from('judul');
+        $this->db->or_where("tahap",1);
+        $this->db->or_where("tahap",6);
+        $this->db->order_by("nim","DESC");
+        $data2 = $this->db->get()->result_array();
+        $data2 = array('data2' => $data2);
+
+        $this->db->select('*');
+        $this->db->from('judul');
+        $this->db->or_where("tahap",2);
+        $this->db->or_where("tahap",3);
+        $this->db->or_where("tahap",4);
+        $this->db->or_where("tahap",5);
+        $this->db->order_by("nim","DESC");
+        $data2utama = $this->db->get()->result_array();
+        $data2utama = array('data2utama' => $data2utama);
+
+        $this->db->select('*');
+        $this->db->from('dosen');
+        $this->db->order_by("id_dosen","ASC");
+        $data3 = $this->db->get()->result_array();
+        $data3 = array('data3' => $data3);
+        $this->template->load('layout/template', 'admin/dashboard', array_merge($data,$data2,$data3,$data2utama));
     }
     public function konfigurasi(){
         $site = $this->Konfigurasi_model->listing();

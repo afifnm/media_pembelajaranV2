@@ -1,5 +1,10 @@
+<ol class="breadcrumb">
+    <li><a href="<?php echo site_url('admin/home');?>"><i class="fa fa-home"></i> Home</a></li>
+    <li class="active">Pendaftaran Judul</li>
+  </ol>
 <div id="myalert">
 	<?php echo $this->session->flashdata('alert', true)?>
+  <?php $this->session->set_flashdata('alert', ''); ?>
 </div>
 <?php foreach($data2 as $row){
   $digit = substr($row['tahun'],1,1);

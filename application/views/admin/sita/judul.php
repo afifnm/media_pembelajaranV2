@@ -1,7 +1,11 @@
+<ol class="breadcrumb">
+    <li><a href="<?php echo site_url('admin/home');?>"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="<?php echo site_url('admin/judul');?>">Pendaftaran Judul</a></li>
+    <li class="active">Angkatan 20<?= $id ?></li>
+  </ol>
 <div id="myalert">
 	<?php echo $this->session->flashdata('alert', true)?>
-</div>
-<div class="col-xs-9" align="right">
+	<?php $this->session->set_flashdata('alert', ''); ?>
 </div>
 <div class="col-xs-12">
 	<div class="box-header">

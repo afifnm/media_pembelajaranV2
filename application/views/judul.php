@@ -59,7 +59,7 @@
                   <input type="text" name="password" placeholder="Password (Buatlah password anda dan ingat baik-baik, digunakan untuk mendaftar ujian.)" style="width: 700px;" required />
                 </div>
                 <div class="span8 margintop10 field form-group">
-                  <input type="text" name="no_hp" placeholder="Nomor whatsapp yang bisa dihubungi" style="width: 300px;" required />
+                  <input type="text" name="no_hp" placeholder="Nomor whatsapp yang bisa dihubungi (contoh penulisan : 0896733...)" style="width: 700px;" required />
                 </div>
                 <div class="span8 margintop10 field form-group">
                   <input type="email" name="email" placeholder="Email | Contoh mahasiswa@gmail.com (Digunakan untuk pemberitahuan ujian)" style="width: 700px;" required />
@@ -91,6 +91,7 @@
                   <option value="Penelitian Tindakan Kelas"> Penelitian Tindakan Kelas</option>
                   <option value="Mixed Method"> Mixed Method</option>
                   <option value="Research dan Development"> Research dan Development</option>
+                  <option value="Desain Based Research (DBR)"> Desain Based Research (DBR)</option>
                   </select>
                 </div>
 
@@ -103,7 +104,7 @@
                 </div>
                 <div class="span4 margintop10 field form-group"> Formulir Pendaftaran Judul</div>
                 <div class="span8 margintop10 field form-group">
-                  <input type="text" name="file2" placeholder="Upload formulir judul anda ke google drive, kemudian masukan linknya disini (hapus https:// pada link)" style="width: 700px;" required />
+                  <input type="text" name="file2" placeholder="Upload formulir judul anda ke google drive (full access), kemudian masukan linknya disini (hapus https:// pada link)" style="width: 700px;" required />
                 </div>
 
                 <div class="span8 margintop10 field form-group">

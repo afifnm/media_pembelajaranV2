@@ -35,8 +35,8 @@
                         Sistem Informasi Tugas Akhir (SITA) merupakan inovasi Laboratorium Program Studi S1 PPKn FKIP UNS,dengan tujuan untuk pendataan,pengelolaan dan pemantauan skripsi guna meningkatkan Angka Efisiensi Edukasi (AEE).
                         Untuk pusat bantuan silahkan join grup telegram <a href="https://t.me/+J7JVqux8c8g1Yzk1" target="_blank" class="btn btn-primary">Klik disini untuk bergabung</a>
                       </div>
-                      <a style="margin: 10px;" href="<?php echo base_url('assets/upload/file/FORM_PENGAJUAN_JUDUL_SKRIPSI_PPKN_2023.doc'); ?>" class="btn btn-inverse pull-right">Formulir Judul</a>
-                      <a style="margin: 10px;" href="<?php echo base_url('assets/upload/images/skema2.jpg'); ?>" data-pretty="prettyPhoto[gallery1]" class="btn btn-inverse pull-right">Alur Tugas Akhir</a>
+                      <a style="margin: 10px;" href="<?php echo base_url('assets/upload/file/FORM_PENGAJUAN_JUDUL_SKRIPSI_PPKN_2023.doc'); ?>" class="btn btn-inverse pull-right">KLIK DI SINI UNTUK MENGUNDUH FORMULIR  JUDUL</a>
+                      <a style="margin: 10px;" href="<?php echo base_url('assets/upload/images/skema2.jpg'); ?>" data-pretty="prettyPhoto[gallery1]" class="btn btn-inverse pull-right">ALUR TUGAS AKHIR</a>
 
                   </div>
                 </div>
@@ -51,7 +51,7 @@
                 <h4>PENDAFTARAN JUDUL</h4>
               </div>
               <div class="action">
-                <a href="<?php echo site_url('sita/judul');?>" class="btn btn-primary">&nbsp;&nbsp;&nbsp;Daftar&nbsp;&nbsp;&nbsp;</a>
+                <a href="<?php echo site_url('sita/judul');?>" class="btn btn-primary">&nbsp;&nbsp;&nbsp;KLIK DI SINI UNTUK  MENDAFTAR&nbsp;&nbsp;&nbsp;</a>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
                 <h4>PENDAFTARAN UJIAN</h4>
               </div>
               <div class="action">
-                <a href="<?php echo site_url('sita/ujian');?>" class="btn btn-primary">&nbsp;&nbsp;&nbsp;Daftar&nbsp;&nbsp;&nbsp;</a>
+                <a href="<?php echo site_url('sita/ujian');?>" class="btn btn-primary">&nbsp;&nbsp;&nbsp;KLIK DI SINI UNTUK  MENDAFTAR&nbsp;&nbsp;&nbsp;</a>
               </div>
             </div>
           </div>
@@ -314,12 +314,14 @@ $s2 = $this->CRUD_model->jenis_penelitian('Kuanti');
 $s3 = $this->CRUD_model->jenis_penelitian('Kelas');
 $s4 = $this->CRUD_model->jenis_penelitian('Mixed');
 $s5 = $this->CRUD_model->jenis_penelitian('Deve');
-$total = $s1+$s2+$s3+$s4+$s5;
+$s6 = $this->CRUD_model->jenis_penelitian('Based');
+$total = $s1+$s2+$s3+$s4+$s5+$s6;
 $persen1 = round($s1/$total , 4)*100; 
 $persen2 = round($s2/$total , 4)*100; 
 $persen3 = round($s3/$total , 4)*100; 
 $persen4 = round($s4/$total , 4)*100; 
 $persen5 = round($s5/$total , 4)*100; 
+$persen6 = round($s6/$total , 4)*100; 
 ?>
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
@@ -327,6 +329,7 @@ $persen5 = round($s5/$total , 4)*100;
 $(document).ready(function() {
   $('.datatab').DataTable({
     pageLength : 5,
+    lengthMenu: [5, 10, 20, 50, 100, 200, 500],
   });
 } );
 </script>
@@ -336,16 +339,24 @@ $(document).ready(function() {
   var jenispenelitian = new Chart(ctx, {
     type: 'pie',
     data: {
-      labels: ["<?php echo 'Kualitatif '.$persen1.'%' ?>","<?php echo 'Kuantitatif '.$persen2.'%' ?>","<?php echo 'PTK '.$persen3.'%' ?>","<?php echo 'Mixed Method '.$persen4.'%' ?>", "<?php echo 'RnD '.$persen5.'%' ?>"],
+      labels: [
+        "<?php echo 'Kualitatif '.$persen1.'%' ?>",
+        "<?php echo 'Kuantitatif '.$persen2.'%' ?>",
+        "<?php echo 'PTK '.$persen3.'%' ?>",
+        "<?php echo 'Mixed Method '.$persen4.'%' ?>",
+        "<?php echo 'RnD '.$persen5.'%' ?>",
+        "<?php echo 'DBR '.$persen6.'%' ?>",
+      ],
       datasets: [{
         label: '',
-        data: [<?php echo $s1.','.$s2.','.$s3.','.$s4.','.$s5 ?>],
+        data: [<?php echo $s1.','.$s2.','.$s3.','.$s4.','.$s5.','.$s6 ?>],
         backgroundColor: [
         'rgba(244, 66, 66, 0.7)',
         'rgba(255, 140, 0, 0.7)',
         'rgba(0, 25, 255, 0.7)',
         'rgba(28, 188, 0, 0.7)',
-        'rgba(0, 233, 255, 0.7)'
+        'rgba(0, 233, 255, 0.7)',
+        'rgba(150, 50, 255, 0.7)'
         ]
       }]
     },

@@ -21,7 +21,7 @@
 	.ngepasin{
 		background-color: #ecf0f5;
 		margin-bottom: 50px;
-		margin-top: 20px;
+		margin-top: 10px;
 	}
 
 	.example-modal .modal {

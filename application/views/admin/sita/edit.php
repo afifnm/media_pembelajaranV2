@@ -1,11 +1,15 @@
-<?php foreach($data2 as $u){ ?>
+<?php foreach($data2 as $u){
+ $angkatan = substr($u->nim,3,2); 
+  ?>
   <ol class="breadcrumb">
     <li><a href="<?php echo site_url('admin/home');?>"><i class="fa fa-home"></i> Home</a></li>
-    <li class="active">Data Tugas Akhir</li>
-    <li class="active"><?php echo $u->nim; ?></li>
+    <li><a href="<?php echo site_url('admin/judul');?>">Pendaftaran Judul</a></li>
+    <li><a href="<?php echo site_url('admin/judul/angkatan/'.$angkatan);?>">Angkatan 20<?= $angkatan ?></a></li>
+    <li class="active"><?= $u->nim ?></li>
   </ol>
 <div id="myalert">
   <?php echo $this->session->flashdata('alert', true)?>
+  <?php $this->session->set_flashdata('alert', ''); ?>
 </div>
 <div class="col-xs-9" align="right">
 </div>

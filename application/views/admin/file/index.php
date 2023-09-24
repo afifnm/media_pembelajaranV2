@@ -3,7 +3,8 @@
     <li class="active">Data File</li>
   </ol>
 <div id="myalert">
-  <?php echo $this->session->flashdata('alert', true)?>
+  <?php echo $this->session->flashdata('alert', true);?>
+  <?php $this->session->set_flashdata('alert', ''); ?>
 </div>
 <div class="col-xs-3" align="left">
   <div class="box-header">

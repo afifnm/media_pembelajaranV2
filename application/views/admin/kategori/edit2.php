@@ -6,6 +6,7 @@
 </ol>
 <div id="myalert">
   <?php echo $this->session->flashdata('alert', true)?>
+  <?php $this->session->set_flashdata('alert', ''); ?>
 </div>
 <div class="col-xs-6">
   <div class="box box-success">

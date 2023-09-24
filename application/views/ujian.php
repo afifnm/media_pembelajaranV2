@@ -67,7 +67,7 @@
 								<div class="span4 margintop10 field form-group"> Berkas-berkas ujian </div>
 								<div class="span8 margintop10 field form-group">
 									<input type="text" name="file2"
-										placeholder="Upload Berkas-berkas ke google drive, kemudian masukan linknya disini (hapus https:// pada link)"
+										placeholder="Upload Berkas-berkas ke google drive (full access), kemudian masukan linknya disini (hapus https:// pada link)"
 										style="width: 700px;" required />
 								</div>
 								<div class="span8 margintop10 field form-group">
