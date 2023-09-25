@@ -67,16 +67,72 @@
 
 		</div>
 	</div>
-  
+
 	<div class="col-md-6">
 		<div class="box">
 			<div class="box-header">
 			</div>
-      <div>
-						<canvas id="jenispenelitian"></canvas>
-					</div>
+			<div>
+				<canvas id="jenispenelitian"></canvas>
+			</div>
 		</div>
 	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="box">
+      <div class="box-header">
+        <h3 class="box-title" style="text-align:center">Data Pengajuan Judul & Pendaftaran Ujian Skripsi Program Studi PPKn</h3>
+      </div>
+			<table class="table datatab">
+				<thead>
+					<tr>
+						<th>No</th>
+						<th>Nama Dosen </th>
+						<th>Pembimbing 1</th>
+						<th>Pembimbing 2 </th>
+						<th style="text-align: center;">Ketua Penguji </th>
+						<th style="text-align: center;">Sekretaris </th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php $no = 1; foreach ($data3 as $user) {?>
+					<tr>
+						<td><?php echo $no; ?></td>
+						<td>
+							<a href="<?php echo site_url('sita/bimbingan/'.$user['id_dosen']);?>"><?php echo $user['nama']; ?></a>
+							<a href="<?php echo site_url('sita/bimbingan/'.$user['id_dosen']);?>"><span
+									class="label label-info pull-right">DETAIL </span></a>
+						</td>
+						<td>
+							<span class="label label-warning"> <?php echo $this->CRUD_model->pembimbing1($user['id_dosen']); ?>
+							</span>
+							<span class="label label-success"> <?php echo $this->CRUD_model->lulus('dosen1',$user['id_dosen']); ?>
+							</span>
+							<span class="label label-primary">
+								<?php echo $this->CRUD_model->pembimbing1($user['id_dosen'])-$this->CRUD_model->lulus('dosen1',$user['id_dosen']); ?>
+							</span>
+						</td>
+						<td>
+							<span class="label label-warning"> <?php echo $this->CRUD_model->pembimbing2($user['id_dosen']); ?>
+							</span>
+							<span class="label label-success"> <?php echo $this->CRUD_model->lulus('dosen2',$user['id_dosen']); ?>
+							</span>
+							<span class="label label-primary">
+								<?php echo $this->CRUD_model->pembimbing2($user['id_dosen'])-$this->CRUD_model->lulus('dosen2',$user['id_dosen']); ?>
+							</span>
+						</td>
+						<th style="text-align: center;"><span
+								class="label label-warning"><?php echo $this->CRUD_model->ketua($user['id_dosen']); ?></span></td>
+						<th style="text-align: center;"><span
+								class="label label-warning"><?php echo $this->CRUD_model->sekretaris($user['id_dosen']); ?></span></td>
+					</tr>
+					<?php $no++; } ?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
 <?php
 $s1 = $this->CRUD_model->jenis_penelitian('Kuali');
 $s2 = $this->CRUD_model->jenis_penelitian('Kuanti');
