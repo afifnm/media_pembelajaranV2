@@ -77,22 +77,38 @@ class SITA extends MY_Controller
  
        $this->db->select('*')->from('judul')->where('dosen1',$id_dosen);
        $data2 = $this->db->get()->result_array();
+       $this->db->select('DISTINCT(SUBSTRING(nim,4,2)) as tahun')->from('judul')->where('dosen1',$id_dosen);
+       $this->db->order_by('tahun', 'ASC');
+       $data2X = $this->db->get()->result_array();
 
        $this->db->select('*')->from('judul')->where('dosen2',$id_dosen); 
        $data3 = $this->db->get()->result_array();
+       $this->db->select('DISTINCT(SUBSTRING(nim,4,2)) as tahun')->from('judul')->where('dosen2',$id_dosen);
+       $this->db->order_by('tahun', 'ASC');
+       $data3X = $this->db->get()->result_array();
 
        $this->db->select('*')->from('judul')->where('penguji1',$id_dosen); 
        $ketua = $this->db->get()->result_array();
+       $this->db->select('DISTINCT(SUBSTRING(nim,4,2)) as tahun')->from('judul')->where('penguji1',$id_dosen);
+       $this->db->order_by('tahun', 'ASC');
+       $ketuaX = $this->db->get()->result_array();
 
        $this->db->select('*')->from('judul')->where('penguji2',$id_dosen); 
        $sekre = $this->db->get()->result_array();
+       $this->db->select('DISTINCT(SUBSTRING(nim,4,2)) as tahun')->from('judul')->where('penguji2',$id_dosen);
+       $this->db->order_by('tahun', 'ASC');
+       $sekreX = $this->db->get()->result_array();
 
        $data2 = array(
         'data2' => $data2,
         'data3' => $data3,
         'data4' => $data4,
         'ketua' => $ketua,
-        'sekre' => $sekre
+        'sekre' => $sekre,
+        'data2X' => $data2X,
+        'data3X' => $data3X,
+        'ketuaX' => $ketuaX,
+        'sekreX' => $sekreX,
       );  
        $this->load->view('bimbingan',array_merge($data,$data2));
     }
@@ -278,7 +294,7 @@ class SITA extends MY_Controller
           $this->email->set_newline("\r\n");  
           $this->email->from('webmaster@pipapip.web.id', 'Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
           $link = site_url("sita");
-          $this->email->to($site['email']);
+          $this->email->to('mediainformasipkn@gmail.com');
           $this->email->subject('Pemberitahuan Pendaftaran Judul Skripsi | Sistem Informasi Tugas Akhir (SITA) PPKn UNS');
           $this->email->message('Atas nama '.$this->input->post('nama').' dengan NIM '.$this->input->post('nim').' 
           dan dengan judul '.$this->input->post('judul'). ' telah mendaftar judul skripsi. Selengkapnya akses tautan berikut: <a href="'.$link.'" target="_blank"> '.$link.' </a> ');

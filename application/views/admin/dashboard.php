@@ -83,7 +83,11 @@
 		<div class="box">
       <div class="box-header">
         <h3 class="box-title" style="text-align:center">Data Pengajuan Judul & Pendaftaran Ujian Skripsi Program Studi PPKn</h3>
-      </div>
+		<br>
+		<span class="label label-warning"> JUMLAH </span> &nbsp;
+		<span class="label label-success"> SUDAH UJIAN </span> &nbsp;
+        <span class="label label-primary"> BELUM UJIAN </span> &nbsp; 
+	</div>
 			<table class="table datatab">
 				<thead>
 					<tr>
@@ -106,21 +110,21 @@
 						</td>
 						<td>
 							<span class="label label-warning"> <?php echo $this->CRUD_model->pembimbing1($user['id_dosen']); ?>
-							</span>
+							</span>&nbsp;
 							<span class="label label-success"> <?php echo $this->CRUD_model->lulus('dosen1',$user['id_dosen']); ?>
-							</span>
+							</span>&nbsp;
 							<span class="label label-primary">
 								<?php echo $this->CRUD_model->pembimbing1($user['id_dosen'])-$this->CRUD_model->lulus('dosen1',$user['id_dosen']); ?>
-							</span>
+							</span>&nbsp;
 						</td>
 						<td>
 							<span class="label label-warning"> <?php echo $this->CRUD_model->pembimbing2($user['id_dosen']); ?>
-							</span>
+							</span>&nbsp;
 							<span class="label label-success"> <?php echo $this->CRUD_model->lulus('dosen2',$user['id_dosen']); ?>
-							</span>
+							</span>&nbsp;
 							<span class="label label-primary">
 								<?php echo $this->CRUD_model->pembimbing2($user['id_dosen'])-$this->CRUD_model->lulus('dosen2',$user['id_dosen']); ?>
-							</span>
+							</span>&nbsp;
 						</td>
 						<th style="text-align: center;"><span
 								class="label label-warning"><?php echo $this->CRUD_model->ketua($user['id_dosen']); ?></span></td>

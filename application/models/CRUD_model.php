@@ -156,4 +156,11 @@ class CRUD_model extends CI_Model{
        $jml = $this->db->get('judul');
        return $jml->num_rows();
     }
+    public function jumlah($kolom,$id_dosen,$nim){
+      $this->db->select('*');
+      $this->db->where($kolom,$id_dosen);
+      $this->db->like('nim',$nim);
+      $jml = $this->db->get('judul');
+      return $jml->num_rows();
+   }
 }

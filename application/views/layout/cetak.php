@@ -3,8 +3,11 @@ foreach ($data4 as $u) {
 	$pdf = new FPDF('P', 'mm', 'A4');
 	$pdf->SetFont('times', '', 12);
 	$pdf->AddPage();
+	$logo = 'assets/upload/images/uns.png';
+	$pdf->Cell( 00, 20, $pdf->Image($logo, 90, 5, 20), 0, 0, 'C', false );
+	$pdf->Ln();
 	$x1 = 40;
-	$pdf->Cell(0 ,5,'Penetapan Tim Penguji Skripsi Program Studi PPKn FKIP UNS',0,1,'C');
+	$pdf->Cell(0 ,5,'Penetapan Tim Penguji Skripsi Program Studi S-1 PPKn FKIP-UNS',0,1,'C');
 	$pdf->Cell(0 ,5,'',0,1);
 	if($u['tahap']>3){
 	$pdf->Cell($x1 ,5,'Nomor Registrasi',0,0);

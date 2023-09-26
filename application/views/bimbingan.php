@@ -98,6 +98,24 @@
 									<?php $no++; } ?>
 								</tbody>
 							</table>
+							<center>
+							<table class="table table-striped">
+								<thead>
+									<tr>
+									<?php $no = 1; foreach ($data2X as $user) { ?>
+										<td align="center"><?= "20".$user['tahun'] ?></td>
+									<?php } ?>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									<?php $no = 1; foreach ($data2X as $user) { ?>
+										<td><?= $this->CRUD_model->jumlah('dosen1',$id_dosen,'K64'.$user['tahun']) ?></td>
+									<?php } ?>
+									</tr>
+								</tbody>
+							</table>
+							</center>
 						</div>
 					</div>
 					<div class="span6">
@@ -156,6 +174,24 @@
 									<?php $no++; } ?>
 								</tbody>
 							</table>
+							<center>
+							<table class="table table-striped">
+								<thead>
+									<tr>
+									<?php $no = 1; foreach ($data3X as $user) { ?>
+										<td align="center"><?= "20".$user['tahun'] ?></td>
+									<?php } ?>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									<?php $no = 1; foreach ($data3X as $user) { ?>
+										<td><?= $this->CRUD_model->jumlah('dosen2',$id_dosen,'K64'.$user['tahun']) ?></td>
+									<?php } ?>
+									</tr>
+								</tbody>
+							</table>
+							</center>
 						</div>
 					</div>
 					<!-- divider -->
@@ -221,6 +257,24 @@
 									<?php $no++; } ?>
 								</tbody>
 							</table>
+							<center>
+							<table class="table table-striped">
+								<thead>
+									<tr>
+									<?php $no = 1; foreach ($ketuaX as $user) { ?>
+										<td align="center"><?= "20".$user['tahun'] ?></td>
+									<?php } ?>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									<?php $no = 1; foreach ($ketuaX as $user) { ?>
+										<td><?= $this->CRUD_model->jumlah('penguji1',$id_dosen,'K64'.$user['tahun']) ?></td>
+									<?php } ?>
+									</tr>
+								</tbody>
+							</table>
+							</center>
 						</div>
 					</div>
 					<div class="span6">
@@ -279,6 +333,24 @@
 									<?php $no++; } ?>
 								</tbody>
 							</table>
+							<center>
+							<table class="table table-striped">
+								<thead>
+									<tr>
+									<?php $no = 1; foreach ($sekreX as $user) { ?>
+										<td align="center"><?= "20".$user['tahun'] ?></td>
+									<?php } ?>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									<?php $no = 1; foreach ($sekreX as $user) { ?>
+										<td><?= $this->CRUD_model->jumlah('penguji2',$id_dosen,'K64'.$user['tahun']) ?></td>
+									<?php } ?>
+									</tr>
+								</tbody>
+							</table>
+							</center>
 						</div>
 					</div>
 				</div>

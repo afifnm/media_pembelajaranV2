@@ -3,7 +3,7 @@
 	$pdf->SetFont('times', '', 13);
 	$pdf->AddPage();
 	$no = 1;
-	$pdf->Cell(0 ,5,'Daftar Pengajuan Tugas Akhir (Skripsi) Program Studi S-1 PPKN FKIP UNS',0,1,'C');
+	$pdf->Cell(0 ,5,'Daftar Pengajuan Tugas Akhir (Skripsi) Program Studi S-1 PPKN FKIP UNS Angkatan 20'.$id,0,1,'C');
     $pdf->ln();
     $pdf->SetFont('times', '', 8);
 	$pdf->Cell(10 ,5,'No',1,0);

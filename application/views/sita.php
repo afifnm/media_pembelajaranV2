@@ -15,7 +15,10 @@
         <div class="row">
           <div class="span12">
             <div class="inner-heading">
-              <center><h2>Sistem Informasi Tugas Akhir (SITA)</h2></center>
+              <center>
+                <img style="margin-top: 10px;" src=<?php echo base_url('assets/upload/images/uns.png') ?> width="70px">
+                <h2 style="margin-top: 5px;">Sistem Informasi Tugas Akhir (SITA)</h2>
+              </center>
             </div>
           </div>
         </div>
@@ -35,8 +38,8 @@
                         Sistem Informasi Tugas Akhir (SITA) merupakan inovasi Laboratorium Program Studi S1 PPKn FKIP UNS,dengan tujuan untuk pendataan,pengelolaan dan pemantauan skripsi guna meningkatkan Angka Efisiensi Edukasi (AEE).
                         Untuk pusat bantuan silahkan join grup telegram <a href="https://t.me/+J7JVqux8c8g1Yzk1" target="_blank" class="btn btn-primary">Klik disini untuk bergabung</a>
                       </div>
-                      <a style="margin: 10px;" href="<?php echo base_url('assets/upload/file/FORM_PENGAJUAN_JUDUL_SKRIPSI_PPKN_2023.doc'); ?>" class="btn btn-inverse pull-right">KLIK DI SINI UNTUK MENGUNDUH FORMULIR  JUDUL</a>
-                      <a style="margin: 10px;" href="<?php echo base_url('assets/upload/images/skema2.jpg'); ?>" data-pretty="prettyPhoto[gallery1]" class="btn btn-inverse pull-right">ALUR TUGAS AKHIR</a>
+                      <a style="margin: 10px;" href="<?php echo base_url('assets/upload/file/FORM_PENGAJUAN_JUDUL_SKRIPSI_PPKN_2023.doc'); ?>" class="btn btn-success pull-right">KLIK DI SINI UNTUK MENGUNDUH FORMULIR  JUDUL</a>
+                      <a style="margin: 10px;" href="<?php echo base_url('assets/upload/images/skema2.jpg'); ?>" data-pretty="prettyPhoto[gallery1]" class="btn btn-warning pull-right">ALUR TUGAS AKHIR</a>
 
                   </div>
                 </div>
