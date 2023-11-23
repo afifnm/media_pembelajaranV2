@@ -237,7 +237,8 @@ class SITA extends MY_Controller
       $site = $this->Konfigurasi_model->listing();
       $tanggal_awal = $site['tanggal_awal'];
       $tanggal_akhir = $site['tanggal_akhir'];
-      if(($date >= $tanggal_awal) AND ($date <= $tanggal_akhir)){
+      $status = $site['active'];
+      if($status==1){
         $this->db->from('judul');
         $this->db->where('nim',$this->input->post('nim'));
         $cek = $this->db->get()->num_rows();

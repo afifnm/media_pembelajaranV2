@@ -23,6 +23,15 @@
 					<li class="list-group-item" style="text-align:center">
 						<b>Terakhir Login</b><br><a><?php echo $this->session->userdata('last_login'); ?></a>
 					</li>
+					<li class="list-group-item" style="text-align:center">
+						<?php if(($site['active'])==0){ ?>
+						<a href="<?php echo site_url('auth/akun/0/');?>" class="btn btn-success btn-sm"><i
+								class="fa fa-unlock-alt"></i> Buka Pendaftaran Judul</a>
+						<?php }else{ ?>
+						<a href="<?php echo site_url('auth/akun/1/');?>" class="btn btn-info btn-sm"><i
+								class="fa fa-lock"></i> Tutup Pendaftaran Judul</a>
+						<?php } ?>
+					</li>
 				</ul>
 			</div>
 		</div>

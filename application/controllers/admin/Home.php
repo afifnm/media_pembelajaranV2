@@ -66,9 +66,7 @@ class Home extends MY_Controller
             'nama_website' => $this->input->post('nama'),
             'judul_profil' => $this->input->post('judul'),
             'welcome' => $this->input->post('welcome'),
-            'deskripsi' => $this->input->post('mytextarea'),
-            'tanggal_awal' => $this->input->post('tanggal_awal'),
-            'tanggal_akhir' => $this->input->post('tanggal_akhir'),
+            'deskripsi' => $this->input->post('mytextarea')
          );  
         $where = array(
             'id' => '1',

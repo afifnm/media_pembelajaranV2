@@ -39,24 +39,6 @@
               <textarea id="mytextarea" rows="10" name="mytextarea" placeholder="Place some text here"><?php echo $u['deskripsi']; ?></textarea>
             </div>
           </div>
-
-
-          <div class="form-group">
-            <label class="col-sm-1 control-label">Pendaftaran SITA</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-1 control-label">Tanggal Mulai</label>
-            <div class="col-sm-3">
-              <input type="date" class="form-control" name="tanggal_awal" value="<?php echo $u['tanggal_awal']; ?>">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-1 control-label">Tanggal Berakhir</label>
-            <div class="col-sm-3">
-              <input type="date" class="form-control" name="tanggal_akhir" value="<?php echo $u['tanggal_akhir']; ?>">
-            </div>
-          </div>
         </div>
         <!-- /.box-body -->
         <div class="box-footer">

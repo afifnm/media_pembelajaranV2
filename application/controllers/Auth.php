@@ -17,7 +17,28 @@ class Auth extends MY_Controller
       );
       $this->load->view('welcome_message',$data);
     }
-
+    public function akun($active){
+        $where = array('id' => 1);
+        if($active==0){
+            $data = array('active' => 1);  
+            $status = 'Aktif';        
+        } else{
+            $data = array('active' => 0);  
+            $status = 'Tidak Aktif';           
+        }
+        $this->db->Update('konfigurasi', $data, $where);
+        $this->session->set_flashdata('alert', '<p class="box-msg">
+        <div class="info-box alert-success">
+        <div class="info-box-icon">
+        <i class="fa fa-info-circle"></i>
+        </div>
+        <div class="info-box-content" style="font-size:14">
+        <b style="font-size: 20px">SUCCESS</b><br> Pendaftaran judul telah '.$status.'.</div>
+        </div>
+        </p>
+        ');
+        redirect('auth/profile');
+    }
     public function check_account()
     {
         //validasi login
