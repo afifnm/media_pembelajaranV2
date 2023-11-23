@@ -22,19 +22,19 @@
               <?php if($info['id_main']==0){ ?>
               <li><a href="<?php echo site_url('home/kategori/'.$info['id_kategori'].'/0');?>">
                 <?php echo $info['kategori']; ?>
-                <i class="icon-angle-right"></i>
+                <i class="icon-angle-right"></i></a>
               </li>
-              <li><a href=""><?php echo $info['judul']; ?></li>
+              <li><a href=""><?php echo $info['judul']; ?></a></li>
 
               <?php } else {?>
 
               <li><a href="<?php echo site_url('home/subkategori/'.$info['id_main'].'/0');?>">
                 <?php echo $info['main_sub']; ?>
-                <i class="icon-angle-right"></i>
+                <i class="icon-angle-right"></i></a>
               </li>
               <li><a href="<?php echo site_url('home/kategori/'.$info['id_kategori'].'/0');?>">
                 <?php echo $info['kategori']; ?>
-                <i class="icon-angle-right"></i>
+                <i class="icon-angle-right"></i></a>
               </li>
               <li><a href=""><?php echo $info['judul']; ?></a></li>
               <?php }?>
